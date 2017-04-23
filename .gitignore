@@ -1,0 +1,6 @@
+/composer.phar
+/my_app/vendor/
+/my_app/web/bundles/
+/my_app/var/
+!var/cache/.gitkeep
+.idea

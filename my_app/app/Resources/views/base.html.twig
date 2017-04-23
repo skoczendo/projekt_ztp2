@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        {% stylesheets '@bootstrap_css' '../app/Resources/public/css/*' %}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endblock %}
+</head>
+
+
+<body>
+    <div class="container">
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{{ path('home_index') }}">{{ 'label.home'|trans }}</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'label.contestants'|trans }} <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ path('contestant_index') }}">{{ 'label.contestant.open.index'|trans }}</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('contestant_index') }}">{{ 'label.contestant.women.index'|trans }}</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('contestant_index') }}">{{ 'label.contestant.men.index'|trans }}</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ path('school_index') }}">{{ 'label.schools'|trans }}</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="../navbar/">Default</a></li>
+                        <li><a href="../navbar-static-top/">Static top</a></li>
+                        <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        {% block body %}{% endblock %}
+    </div>
+
+
+    {% block javascripts %}
+        {% javascripts '@jquery' '@bootstrap_js' '../app/Resources/public/js/*' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+
+
+</body>
+
+
+</html>

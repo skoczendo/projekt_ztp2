@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="action.add">
+                <source>action.add</source>
+                <target>add</target>
+            </trans-unit>
+
+            <trans-unit id="action.delete">
+                <source>action.delete</source>
+                <target>delete</target>
+            </trans-unit>
+
+            <trans-unit id="action.edit">
+                <source>action.edit</source>
+                <target>edit</target>
+            </trans-unit>
+
+            <trans-unit id="action.index">
+                <source>action.index</source>
+                <target>Back to the list</target>
+            </trans-unit>
+
+            <trans-unit id="action.save">
+                <source>action.save</source>
+                <target>save</target>
+            </trans-unit>
+
+            <trans-unit id="action.view">
+                <source>action.view</source>
+                <target>view</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="label.actions">
+                <source>label.actions</source>
+                <target>actions</target>
+            </trans-unit>
+
+            <trans-unit id="label.contestants">
+                <source>label.contestants</source>
+                <target>contestants</target>
+            </trans-unit>
+
+            <trans-unit id="label.contestant.men.index">
+                <source>label.contestant.men.index</source>
+                <target>men</target>
+            </trans-unit>
+
+            <trans-unit id="label.contestant.open.index">
+                <source>label.contestant.open.index</source>
+                <target>category open</target>
+            </trans-unit>
+
+            <trans-unit id="label.contestant.women.index">
+                <source>label.contestant.women.index</source>
+                <target>women</target>
+            </trans-unit>
+
+            <trans-unit id="label.date_of_birth">
+                <source>label.date_of_birth</source>
+                <target>date of birth</target>
+            </trans-unit>
+
+            <trans-unit id="label.epee">
+                <source>label.epee</source>
+                <target>epee</target>
+            </trans-unit>
+
+            <trans-unit id="label.female">
+                <source>label.female</source>
+                <target>female</target>
+            </trans-unit>
+
+            <trans-unit id="label.home">
+                <source>label.home</source>
+                <target>home</target>
+            </trans-unit>
+
+            <trans-unit id="label.id">
+                <source>label.id</source>
+                <target>id</target>
+            </trans-unit>
+
+            <trans-unit id="label.male">
+                <source>label.male</source>
+                <target>male</target>
+            </trans-unit>
+
+            <trans-unit id="label.name">
+                <source>label.name</source>
+                <target>name</target>
+            </trans-unit>
+
+            <trans-unit id="label.no">
+                <source>label.no</source>
+                <target>no</target>
+            </trans-unit>
+
+            <trans-unit id="label.rapier">
+                <source>label.rapier</source>
+                <target>rapier</target>
+            </trans-unit>
+
+            <trans-unit id="label.sabre">
+                <source>label.sabre</source>
+                <target>sabre</target>
+            </trans-unit>
+
+            <trans-unit id="label.school">
+                <source>label.school</source>
+                <target>school</target>
+            </trans-unit>
+
+            <trans-unit id="label.schools">
+                <source>label.schools</source>
+                <target>schools</target>
+            </trans-unit>
+
+            <trans-unit id="label.sex">
+                <source>label.sex</source>
+                <target>sex</target>
+            </trans-unit>
+
+            <trans-unit id="label.surname">
+                <source>label.surname</source>
+                <target>surame</target>
+            </trans-unit>
+
+            <trans-unit id="label.yes">
+                <source>label.yes</source>
+                <target>yes</target>
+            </trans-unit>
+
+
+            <trans-unit id="message.created_successfully ">
+                <source>message.created_successfully </source>
+                <target>Record has been created successfully!</target>
+            </trans-unit>
+
+            <trans-unit id="message.empty_list">
+                <source>message.empty_list</source>
+                <target>The list of records is empty!</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="title.contestant">
+                <source>title.contestant</source>
+                <target>Contestant profile</target>
+            </trans-unit>
+
+            <trans-unit id="title.contestant.add">
+                <source>title.contestant.add</source>
+                <target>Add contestant</target>
+            </trans-unit>
+
+            <trans-unit id="title.contestants">
+                <source>title.contestants</source>
+                <target>List of contestants</target>
+            </trans-unit>
+
+            <trans-unit id="title.enrolled.list">
+                <source>title.enrolled.list</source>
+                <target>List of contestants from this school</target>
+            </trans-unit>
+
+            <trans-unit id="title.school">
+                <source>title.school</source>
+                <target>School</target>
+            </trans-unit>
+
+            <trans-unit id="title.school.delete">
+                <source>title.school.delete</source>
+                <target>Delete school</target>
+            </trans-unit>
+
+            <trans-unit id="title.school.edit">
+                <source>title.school.edit</source>
+                <target>Edit school</target>
+            </trans-unit>
+
+            <trans-unit id="title.schools">
+                <source>title.schools</source>
+                <target>List of schools</target>
+            </trans-unit>
+
+
+
+
+            <trans-unit id="question.confirmation">
+                <source>question.confirmation</source>
+                <target>Are You sure that You want to delete this record?</target>
+            </trans-unit>
+
+
+        </body>
+    </file>
+</xliff>

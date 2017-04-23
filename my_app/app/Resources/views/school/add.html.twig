@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.school.add'|trans }}
+{% endblock %}
+
+{% block body %}
+
+    <h1>
+        {{ 'title.school.add'|trans }}
+    </h1>
+
+    {% include 'default/_form.html.twig' with {
+    attr: {
+    method: 'post',
+    action: url('school_add')
+    },
+    } %}
+
+    <div class="btn-group">
+        <a href="{{ path('school_index') }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
+            {{ 'action.index'|trans }}
+        </a>
+    </div>
+{% endblock %}
