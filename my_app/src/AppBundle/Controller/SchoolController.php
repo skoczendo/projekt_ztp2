@@ -41,9 +41,9 @@ class SchoolController extends Controller
      * )
      * @Method("GET")
      */
-    public function indexAction()
+    public function indexAction($page)
     {
-        $schools = $this->get('app.repository.school')->findAll();
+        $schools = $this->get('app.repository.school')->findAllPaginated($page);
 
         return $this->render(
             'school/index.html.twig',

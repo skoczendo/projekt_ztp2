@@ -4,6 +4,7 @@
  */
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -88,11 +89,10 @@ class School
     protected $name;
 
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -115,43 +115,44 @@ class School
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
         return $this->name;
     }
 
+
     /**
-     * Add products
+     * Add contestants
      *
-     * @param \AppBundle\Entity\Contestant $products
+     * @param \AppBundle\Entity\Contestant $contestants
      * @return School
      */
-    public function addProduct(\AppBundle\Entity\Contestant $products)
+    public function addContestant(\AppBundle\Entity\Contestant $contestants)
     {
-        $this->products[] = $products;
+        $this->contestants[] = $contestants;
 
         return $this;
     }
 
     /**
-     * Remove products
+     * Remove contestants
      *
-     * @param \AppBundle\Entity\Contestant $products
+     * @param \AppBundle\Entity\Contestant $contestants
      */
-    public function removeProduct(\AppBundle\Entity\Contestant $products)
+    public function removeContestant(\AppBundle\Entity\Contestant $contestants)
     {
-        $this->products->removeElement($products);
+        $this->contestants->removeElement($contestants);
     }
 
     /**
-     * Get products
+     * Get contestants
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getProducts()
+    public function getContestants()
     {
-        return $this->products;
+        return $this->contestants;
     }
 }

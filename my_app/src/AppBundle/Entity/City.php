@@ -1,32 +1,31 @@
 <?php
 /**
- * School entity.
+ * City entity.
  */
 namespace AppBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Class School.
+ * Class City.
  *
  * @package AppBundle\Entity
  *
  * @ORM\Table(
- *     name="schools"
+ *     name="cities"
  * )
  * @ORM\Entity(
- *     repositoryClass="AppBundle\Repository\SchoolRepository"
+ *     repositoryClass="AppBundle\Repository\CityRepository"
  * )
  *
  * @UniqueEntity(
- *     groups={"schools-default"},
+ *     groups={"cities-default"},
  *     fields={"name"}
  * )
  */
-class School
+class City
 {
     /**
      * Use constants to define configuration options that rarely change instead
@@ -34,17 +33,6 @@ class School
      * See http://symfony.com/doc/current/best_practices/configuration.html#constants-vs-configuration-options
      */
     const NUM_ITEMS = 10;
-
-
-    /**
-     * @ORM\OneToMany(targetEntity="Contestant", mappedBy="school")
-     */
-    private $contestants;
-
-    public function __construct()
-    {
-        $this->contestants = new ArrayCollection();
-    }
 
 
     /**
@@ -77,11 +65,11 @@ class School
      * )
      *
      * @Assert\NotBlank(
-     *     groups={"school-default"}
+     *     groups={"city-default"}
      * )
      *
      * @Assert\Length(
-     *     groups={"school-default"},
+     *     groups={"city-default"},
      *     min="3",
      *     max="128",
      * )
@@ -92,7 +80,7 @@ class School
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -103,7 +91,7 @@ class School
      * Set name
      *
      * @param string $name
-     * @return School
+     * @return City
      */
     public function setName($name)
     {
@@ -115,11 +103,10 @@ class School
     /**
      * Get name
      *
-     * @return string
+     * @return string 
      */
     public function getName()
     {
         return $this->name;
     }
-
 }

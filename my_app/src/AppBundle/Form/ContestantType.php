@@ -5,6 +5,8 @@
 namespace AppBundle\Form;
 
 use AppBundle\Entity\Contestant;
+use AppBundle\Entity\School;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -59,6 +61,20 @@ class ContestantType extends AbstractType
                 ),
                 // *this line is important*
                 'choices_as_values' => true,
+            ]
+        )
+        ->add(
+            'school',
+            EntityType::class,
+            [
+                'class' => School::class,
+                'choice_label' => function ($school) {
+                    return $school->getName();
+                },
+                'label' => 'label.school',
+                'required' => false,
+                
+                'multiple' => false,
             ]
         )
         ->add(

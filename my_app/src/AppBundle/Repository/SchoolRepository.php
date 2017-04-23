@@ -4,6 +4,8 @@ namespace AppBundle\Repository;
 
 use AppBundle\Entity\School;
 use Doctrine\ORM\EntityRepository;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\Pagerfanta;
 
 /**
  * SchoolRepository
@@ -33,5 +35,34 @@ class SchoolRepository extends EntityRepository
     {
         $this->_em->remove($school);
         $this->_em->flush();
+    }
+
+    /**
+     * Gets all records paginated.
+     *
+     * @param int $page Page number
+     *
+     * @return \Pagerfanta\Pagerfanta Result
+     */
+    public function findAllPaginated($page = 1)
+    {
+        $paginator = new Pagerfanta(new DoctrineORMAdapter($this->queryAll(), false));
+        $paginator->setMaxPerPage(School::NUM_ITEMS);
+        $paginator->setCurrentPage($page);
+
+        return $paginator;
+    }
+
+    /**
+     * Query all entities.
+     *
+     * @return \Doctrine\ORM\Query
+     */
+    protected function queryAll()
+    {
+        return $this->_em->createQuery('
+            SELECT school
+            FROM AppBundle:School school
+        ');
     }
 }

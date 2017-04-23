@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ 'title.schools'|trans }}
+    {{ 'title.cities'|trans }}
 {% endblock %}
 
 {% block body %}
@@ -11,8 +11,8 @@
         {% include 'default/_flash_messages.html.twig' %}
     </div>
 
-    <h1>{{ 'title.schools'|trans }}</h1>
-    {% if schools is defined and schools|length %}
+    <h1>{{ 'title.cities'|trans }}</h1>
+    {% if cities is defined and cities|length %}
         <table class="table table-striped">
             <thead>
             <tr>
@@ -24,7 +24,7 @@
             </tr>
             </thead>
             <tbody>
-            {% for item in schools %}
+            {% for item in cities %}
                 <tr>
                     <td>{{ item.id }}</td>
                     <td>{{ item.name }}</td>
@@ -68,9 +68,9 @@
             {{ 'message.empty_list'|trans }}
         </div>
     {% endif %}
-
+{#
     <div class="navigation text-center">
         {{ pagerfanta(schools, 'twitter_bootstrap3_translated', { routeName: ('school_index_paginated') }) }}
     </div>
-
+#}
 {% endblock %}
