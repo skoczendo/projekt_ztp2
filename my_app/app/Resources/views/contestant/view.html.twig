@@ -56,7 +56,7 @@
                         {{ 'label.no'|trans }}
                     {% endif %}
                 </td>
-                <td>SCHOOL!!!</td>
+                <td>{{ contestant.school.name }}</td>
                 <td>
                     <div class="btn-group">
                         <a href="{{ path('contestant_edit', {'id': contestant.id}) }}" class="btn btn-default" title="{{ 'action.edit'|trans }}">

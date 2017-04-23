@@ -65,4 +65,6 @@ class ContestantRepository extends EntityRepository
             FROM AppBundle:Contestant contestant
         ');
     }
+
+
 }

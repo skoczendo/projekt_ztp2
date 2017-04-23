@@ -30,6 +30,12 @@ class Contestant
     const NUM_ITEMS = 10;
 
     /**
+     * @ORM\ManyToOne(targetEntity="School", inversedBy="contestants")
+     * @ORM\JoinColumn(name="school_id", referencedColumnName="id")
+     */
+    private $school;
+
+    /**
      * Primary key.
      *
      * @var integer $id

@@ -30,6 +30,12 @@ class Contestant
     const NUM_ITEMS = 10;
 
     /**
+     * @ORM\ManyToOne(targetEntity="School", inversedBy="contestants")
+     * @ORM\JoinColumn(name="school_id", referencedColumnName="id")
+     */
+    private $school;
+
+    /**
      * Primary key.
      *
      * @var integer $id
@@ -326,5 +332,28 @@ class Contestant
     public function getDateOfBirth()
     {
         return $this->date_of_birth;
+    }
+
+    /**
+     * Set school
+     *
+     * @param \AppBundle\Entity\School $school
+     * @return Contestant
+     */
+    public function setSchool(\AppBundle\Entity\School $school = null)
+    {
+        $this->school = $school;
+
+        return $this;
+    }
+
+    /**
+     * Get school
+     *
+     * @return \AppBundle\Entity\School 
+     */
+    public function getSchool()
+    {
+        return $this->school;
     }
 }

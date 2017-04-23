@@ -46,6 +46,72 @@
 
     <h2>{{ 'title.enrolled.list'|trans }}</h2>
 
+    {% if contestants is defined and contestants|length %}
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ 'label.id'|trans }}</th>
+                <th>{{ 'label.surname'|trans }}</th>
+                <th>{{ 'label.name'|trans }}</th>
+                <th>{{ 'label.sex'|trans }}</th>
+                <th>{{ 'label.date_of_birth'|trans }}</th>
+                <th>{{ 'label.epee'|trans }}</th>
+                <th>{{ 'label.sabre'|trans }}</th>
+                <th>{{ 'label.rapier'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for person in contestants %}
+                <tr>
+                    <td>{{ person.id }}</td>
+                    <td>{{ person.surname }}</td>
+                    <td>{{ person.name }}</td>
+                    <td>
+                        {% if person.sex == "m" %}
+                            {{ 'label.male'|trans }}
+                        {% elseif person.sex == "f" %}
+                            {{ 'label.female'|trans }}
+                        {% endif %}
+                    </td>
+                    <td>{{ person.dateOfBirth|date('Y-m-d') }}</td>
+                    <td>
+                        {% if person.epee %}
+                            {{ 'label.yes'|trans }}
+                        {% else %}
+                            {{ 'label.no'|trans }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if person.sabre %}
+                            {{ 'label.yes'|trans }}
+                        {% else %}
+                            {{ 'label.no'|trans }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if person.rapier %}
+                            {{ 'label.yes'|trans }}
+                        {% else %}
+                            {{ 'label.no'|trans }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="btn-group">
+            <a href="{{ path('contestant_add') }}" class="btn btn-default" title="{{ 'action.add'|trans }}">
+                {{ 'action.add'|trans }}
+            </a>
+        </div>
+
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            {{ 'message.empty_list'|trans }}
+        </div>
+    {% endif %}
+
     <div class="btn-group">
         <a href="{{ path('school_index') }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
             {{ 'action.index'|trans }}

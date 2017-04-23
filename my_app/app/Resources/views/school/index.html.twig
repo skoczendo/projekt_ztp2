@@ -10,7 +10,7 @@
     <div class="container">
         {% include 'default/_flash_messages.html.twig' %}
     </div>
-
+{{ dump(schools) }}
 
     <h1>{{ 'title.schools'|trans }}</h1>
     {% if schools is defined and schools|length %}
