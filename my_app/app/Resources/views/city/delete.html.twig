@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.city.delete'|trans }}
+{% endblock %}
+
+{% block body %}
+
+    <h1>
+        {{ 'title.city.delete'|trans }}
+    </h1>
+
+    {% if city is defined and city|length %}
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ 'label.id'|trans }}</th>
+                <th>{{ 'label.name'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ city.id }}</td>
+                <td>{{ city.name }}</td>
+            </tr>
+            </tbody>
+        </table>
+    {% else %}
+        <p>
+            {{ 'message.empty_list'|trans }}
+        </p>
+    {% endif %}
+
+    <h2>
+        {{ 'question.confirmation'|trans }}
+    </h2>
+
+    {% include 'default/_form.html.twig' with {
+    attr: {
+    method: 'post',
+    action: url('city_delete', {'id': city.id})
+    },
+    submit_label: 'delete'
+    } %}
+
+    <div class="btn-group">
+        <a href="{{ path('city_index') }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
+            {{ 'action.index'|trans }}
+        </a>
+    </div>
+{% endblock %}

@@ -39,9 +39,9 @@
             </tbody>
         </table>
     {% else %}
-        <p>
+        <div class="alert alert-warning" role="alert">
             {{ 'message.empty_list'|trans }}
-        </p>
+        </div>
     {% endif %}
 
     <h2>{{ 'title.enrolled.list'|trans }}</h2>
@@ -99,12 +99,6 @@
             {% endfor %}
             </tbody>
         </table>
-
-        <div class="btn-group">
-            <a href="{{ path('contestant_add') }}" class="btn btn-default" title="{{ 'action.add'|trans }}">
-                {{ 'action.add'|trans }}
-            </a>
-        </div>
 
     {% else %}
         <div class="alert alert-warning" role="alert">

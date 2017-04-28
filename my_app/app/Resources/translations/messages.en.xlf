@@ -39,6 +39,11 @@
                 <target>actions</target>
             </trans-unit>
 
+            <trans-unit id="label.cities">
+                <source>label.cities</source>
+                <target>cities</target>
+            </trans-unit>
+
             <trans-unit id="label.contestants">
                 <source>label.contestants</source>
                 <target>contestants</target>

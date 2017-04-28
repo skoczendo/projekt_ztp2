@@ -2,6 +2,7 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\City;
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -12,4 +13,25 @@ use Doctrine\ORM\EntityRepository;
  */
 class CityRepository extends EntityRepository
 {
+    /**
+     * Save entity.
+     *
+     * @param City $city City entity
+     */
+    public function save(City $city)
+    {
+        $this->_em->persist($city);
+        $this->_em->flush();
+    }
+
+    /**
+     * Delete entity.
+     *
+     * @param City $city City entity
+     */
+    public function delete(City $city)
+    {
+        $this->_em->remove($city);
+        $this->_em->flush();
+    }
 }
