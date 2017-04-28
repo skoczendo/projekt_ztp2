@@ -14,6 +14,12 @@ services:
         arguments:
             - AppBundle\Entity\City
 
+    app.repository.competition:
+        class: Doctrine\ORM\EntityRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - AppBundle\Entity\Competition
+
     app.repository.contestant:
         class: Doctrine\ORM\EntityRepository
         factory: ['@doctrine.orm.default_entity_manager', getRepository]

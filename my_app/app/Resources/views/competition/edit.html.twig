@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.competition.edit'|trans }}
+{% endblock %}
+
+{% block body %}
+
+    <h1>
+        {{ 'title.competition.edit'|trans }}
+    </h1>
+
+    {% include 'default/_form.html.twig' with {
+    attr: {
+    method: 'post',
+    action: url('competition_edit', {'id': competition.id})
+    },
+    } %}
+
+    <div class="btn-group">
+        <a href="{{ path('competition_index') }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
+            {{ 'action.index'|trans }}
+        </a>
+    </div>
+{% endblock %}

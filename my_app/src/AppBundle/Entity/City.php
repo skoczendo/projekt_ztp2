@@ -34,6 +34,11 @@ class City
      */
     const NUM_ITEMS = 10;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Competition", mappedBy="city")
+     */
+    private $competitions;
+
 
     /**
      * Primary key.
@@ -108,5 +113,45 @@ class City
     public function getName()
     {
         return $this->name;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->competitions = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add competitions
+     *
+     * @param \AppBundle\Entity\Competition $competitions
+     * @return City
+     */
+    public function addCompetition(\AppBundle\Entity\Competition $competitions)
+    {
+        $this->competitions[] = $competitions;
+
+        return $this;
+    }
+
+    /**
+     * Remove competitions
+     *
+     * @param \AppBundle\Entity\Competition $competitions
+     */
+    public function removeCompetition(\AppBundle\Entity\Competition $competitions)
+    {
+        $this->competitions->removeElement($competitions);
+    }
+
+    /**
+     * Get competitions
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCompetitions()
+    {
+        return $this->competitions;
     }
 }

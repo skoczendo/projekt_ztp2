@@ -35,16 +35,10 @@ class School
      */
     const NUM_ITEMS = 10;
 
-
     /**
      * @ORM\OneToMany(targetEntity="Contestant", mappedBy="school")
      */
-    private $contestants;
-
-    public function __construct()
-    {
-        $this->contestants = new ArrayCollection();
-    }
+    private $products;
 
 
     /**
@@ -122,4 +116,37 @@ class School
         return $this->name;
     }
 
+
+    /**
+     * Add contestants
+     *
+     * @param \AppBundle\Entity\Contestant $contestants
+     * @return School
+     */
+    public function addContestant(\AppBundle\Entity\Contestant $contestants)
+    {
+        $this->contestants[] = $contestants;
+
+        return $this;
+    }
+
+    /**
+     * Remove contestants
+     *
+     * @param \AppBundle\Entity\Contestant $contestants
+     */
+    public function removeContestant(\AppBundle\Entity\Contestant $contestants)
+    {
+        $this->contestants->removeElement($contestants);
+    }
+
+    /**
+     * Get contestants
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getContestants()
+    {
+        return $this->contestants;
+    }
 }

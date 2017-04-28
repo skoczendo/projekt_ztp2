@@ -1,12 +1,12 @@
 <?php
 /**
- * City controller.
+ * Competition controller.
  */
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\City;
-use AppBundle\Form\CityType;
+use AppBundle\Entity\Competition;
+use AppBundle\Form\CompetitionType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -14,13 +14,13 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Class CityController.
+ * Class CompetitionController.
  *
  * @package AppBundle\Controller
  *
- * @Route("/city")
+ * @Route("/competition")
  */
-class CityController extends Controller
+class CompetitionController extends Controller
 {
     /**
      * Index action.
@@ -32,22 +32,22 @@ class CityController extends Controller
      * @Route(
      *     "/",
      *     defaults={"page": 1},
-     *     name="city_index",
+     *     name="competition_index",
      * )
      * @Route(
      *     "/page/{page}",
      *     requirements={"page": "[1-9]\d*"},
-     *     name="city_index_paginated",
+     *     name="competition_index_paginated",
      * )
      * @Method("GET")
      */
     public function indexAction($page)
     {
-        $cities = $this->get('app.repository.city')->findAllPaginated($page);
+        $competitions = $this->get('app.repository.competition')->findAllPaginated($page);
 
         return $this->render(
-            'city/index.html.twig',
-            ['cities' => $cities]
+            'competition/index.html.twig',
+            ['competitions' => $competitions]
         );
     }
 
@@ -58,21 +58,21 @@ class CityController extends Controller
      *
      * @Route(
      *     "/view/{id}",
-     *     name="city_view"
+     *     name="competition_view"
      * )
      */
     public function viewAction($id)
     {
-        $city = $this->get('app.repository.city')->findOneById($id);
-        if (!$city) {
+        $competition = $this->get('app.repository.competition')->findOneById($id);
+        if (!$competition) {
             throw $this->createNotFoundException(
-                'No city found for id '.$id
+                'No competition found for id '.$id
             );
         } else {
             return $this->render(
-                'city/view.html.twig',
+                'competition/view.html.twig',
                 [
-                    'city' => $city,
+                    'competition' => $competition,
                     'id' => $id
                 ]
             );
@@ -88,27 +88,27 @@ class CityController extends Controller
      *
      * @Route(
      *     "/add",
-     *     name="city_add",
+     *     name="competition_add",
      * )
      * @Method({"GET", "POST"})
      */
     public function addAction(Request $request)
     {
-        $city = new City();
-        $form = $this->createForm(CityType::class, $city);
+        $competition = new Competition();
+        $form = $this->createForm(CompetitionType::class, $competition);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->get('app.repository.city')->save($city);
+            $this->get('app.repository.competition')->save($competition);
             $this->addFlash('success', 'message.created_successfully');
 
-            return $this->redirectToRoute('city_index');
+            return $this->redirectToRoute('competition_index');
         }
 
         return $this->render(
-            'city/add.html.twig',
+            'competition/add.html.twig',
             [
-                'city' => $city,
+                'competition' => $competition,
                 'form' => $form->createView(),
             ]
         );
@@ -123,26 +123,26 @@ class CityController extends Controller
      *
      * @Route(
      *     "/{id}/edit",
-     *     name="city_edit",
+     *     name="competition_edit",
      *     requirements={"page": "[1-9]\d*"},
      * )
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, City $city){
-        $form = $this->createForm(CityType::class, $city);
+    public function editAction(Request $request, Competition $competition){
+        $form = $this->createForm(CompetitionType::class, $competition);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->get('app.repository.city')->save($city);
+            $this->get('app.repository.competition')->save($competition);
             $this->addFlash('success', 'message.created_successfully');
 
-            return $this->redirectToRoute('city_index');
+            return $this->redirectToRoute('competition_index');
         }
 
         return $this->render(
-            'city/edit.html.twig',
+            'competition/edit.html.twig',
             [
-                'city' => $city,
+                'competition' => $competition,
                 'form' => $form->createView(),
             ]
         );
@@ -157,26 +157,26 @@ class CityController extends Controller
      *
      * @Route(
      *     "/{id}/delete",
-     *     name="city_delete",
+     *     name="competition_delete",
      *     requirements={"page": "[1-9]\d*"},
      * )
      * @Method({"GET", "POST"})
      */
-    public function deleteAction(Request $request,City $city){
-        $form = $this->createForm(FormType::class, $city);
+    public function deleteAction(Request $request,Competition $competition){
+        $form = $this->createForm(FormType::class, $competition);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->get('app.repository.city')->delete($city);
+            $this->get('app.repository.competition')->delete($competition);
             $this->addFlash('success', 'message.deleted_successfully');
 
-            return $this->redirectToRoute('city_index');
+            return $this->redirectToRoute('competition_index');
         }
 
         return $this->render(
-            'city/delete.html.twig',
+            'competition/delete.html.twig',
             [
-                'city' => $city,
+                'competition' => $competition,
                 'form' => $form->createView(),
             ]
         );
