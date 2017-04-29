@@ -36,6 +36,20 @@ class Contestant
     private $school;
 
     /**
+     * Competitions.
+     *
+     * @var \Doctrine\Common\Collections\ArrayCollection $competitions
+     *
+     * @ORM\ManyToMany(
+     *     targetEntity="Competition",
+     *     mappedBy="contestants",
+     * )
+     */
+    protected $competitions;
+
+
+
+    /**
      * Primary key.
      *
      * @var integer $id
@@ -355,5 +369,45 @@ class Contestant
     public function getSchool()
     {
         return $this->school;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->competitions = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add competitions
+     *
+     * @param \AppBundle\Entity\Competition $competitions
+     * @return Contestant
+     */
+    public function addCompetition(\AppBundle\Entity\Competition $competitions)
+    {
+        $this->competitions[] = $competitions;
+
+        return $this;
+    }
+
+    /**
+     * Remove competitions
+     *
+     * @param \AppBundle\Entity\Competition $competitions
+     */
+    public function removeCompetition(\AppBundle\Entity\Competition $competitions)
+    {
+        $this->competitions->removeElement($competitions);
+    }
+
+    /**
+     * Get competitions
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCompetitions()
+    {
+        return $this->competitions;
     }
 }

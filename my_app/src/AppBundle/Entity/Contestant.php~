@@ -36,6 +36,20 @@ class Contestant
     private $school;
 
     /**
+     * Competitions.
+     *
+     * @var \Doctrine\Common\Collections\ArrayCollection $competitions
+     *
+     * @ORM\ManyToMany(
+     *     targetEntity="Competition",
+     *     mappedBy="contestants",
+     * )
+     */
+    protected $competitions;
+
+
+
+    /**
      * Primary key.
      *
      * @var integer $id

@@ -37,6 +37,21 @@ class Competition
     private $city;
 
 
+    /**
+     * Contestants.
+     *
+     * @var \Doctrine\Common\Collections\ArrayCollection $contestants
+     *
+     * @ORM\ManyToMany(
+     *     targetEntity="Contestant",
+     *     inversedBy="competitions",
+     * )
+     * @ORM\JoinTable(
+     *     name="competitions_contestants"
+     * )
+     */
+    protected $contestants;
+
 
     /**
      * Primary key.
@@ -128,5 +143,45 @@ class Competition
     public function getCity()
     {
         return $this->city;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->contestants = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add contestants
+     *
+     * @param \AppBundle\Entity\Contestant $contestants
+     * @return Competition
+     */
+    public function addContestant(\AppBundle\Entity\Contestant $contestants)
+    {
+        $this->contestants[] = $contestants;
+
+        return $this;
+    }
+
+    /**
+     * Remove contestants
+     *
+     * @param \AppBundle\Entity\Contestant $contestants
+     */
+    public function removeContestant(\AppBundle\Entity\Contestant $contestants)
+    {
+        $this->contestants->removeElement($contestants);
+    }
+
+    /**
+     * Get contestants
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getContestants()
+    {
+        return $this->contestants;
     }
 }
