@@ -52,6 +52,11 @@ class Competition
      */
     protected $contestants;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Score", mappedBy="competition")
+     */
+    private $scores;
+
 
     /**
      * Primary key.
@@ -183,5 +188,38 @@ class Competition
     public function getContestants()
     {
         return $this->contestants;
+    }
+
+    /**
+     * Add scores
+     *
+     * @param \AppBundle\Entity\Score $scores
+     * @return Competition
+     */
+    public function addScore(\AppBundle\Entity\Score $scores)
+    {
+        $this->scores[] = $scores;
+
+        return $this;
+    }
+
+    /**
+     * Remove scores
+     *
+     * @param \AppBundle\Entity\Score $scores
+     */
+    public function removeScore(\AppBundle\Entity\Score $scores)
+    {
+        $this->scores->removeElement($scores);
+    }
+
+    /**
+     * Get scores
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getScores()
+    {
+        return $this->scores;
     }
 }

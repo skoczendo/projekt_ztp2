@@ -69,13 +69,21 @@ class CompetitionController extends Controller
                 'No competition found for id '.$id
             );
         } else {
-            return $this->render(
-                'competition/view.html.twig',
-                [
-                    'competition' => $competition,
-                    'id' => $id
-                ]
-            );
+            $scores = $this->get('app.repository.score')->findByCompetition($id);
+            if (!$scores) {
+                throw $this->createNotFoundException(
+                    'No scores found for id '.$id
+                );
+            } else {
+                return $this->render(
+                    'competition/view.html.twig',
+                    [
+                        'competition' => $competition,
+                        'scores' => $scores,
+                        'id' => $id
+                    ]
+                );
+            }
         }
     }
 

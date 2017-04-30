@@ -47,6 +47,10 @@ class Contestant
      */
     protected $competitions;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Score", mappedBy="contestant")
+     */
+    private $scores;
 
 
     /**

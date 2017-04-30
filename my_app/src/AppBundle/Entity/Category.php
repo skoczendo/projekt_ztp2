@@ -35,6 +35,11 @@ class Category
     const NUM_ITEMS = 10;
 
     /**
+     * @ORM\OneToMany(targetEntity="Score", mappedBy="category")
+     */
+    private $scores;
+
+    /**
      * Primary key.
      *
      * @var integer $id
@@ -77,6 +82,15 @@ class Category
 
 
 
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->score = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     /**
      * Get id
      *
@@ -108,5 +122,48 @@ class Category
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Add score
+     *
+     * @param \AppBundle\Entity\Score $score
+     * @return Category
+     */
+    public function addScore(\AppBundle\Entity\Score $score)
+    {
+        $this->score[] = $score;
+
+        return $this;
+    }
+
+    /**
+     * Remove score
+     *
+     * @param \AppBundle\Entity\Score $score
+     */
+    public function removeScore(\AppBundle\Entity\Score $score)
+    {
+        $this->score->removeElement($score);
+    }
+
+    /**
+     * Get score
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    /**
+     * Get scores
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getScores()
+    {
+        return $this->scores;
     }
 }

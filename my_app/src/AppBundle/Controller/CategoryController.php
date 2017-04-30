@@ -41,9 +41,9 @@ class CategoryController extends Controller
      * )
      * @Method("GET")
      */
-    public function indexAction()
+    public function indexAction($page)
     {
-        $categories = $this->get('app.repository.category')->findAll();
+        $categories = $this->get('app.repository.category')->findAllPaginated($page);
 
         return $this->render(
             'category/index.html.twig',

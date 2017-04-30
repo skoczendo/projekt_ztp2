@@ -38,6 +38,12 @@ services:
         arguments:
             - AppBundle\Entity\School
 
+    app.repository.score:
+        class: Doctrine\ORM\EntityRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - AppBundle\Entity\Score
+
     app.twig_extension:
             class: AppBundle\Twig\AppExtension
             public: false

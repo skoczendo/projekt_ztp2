@@ -39,9 +39,29 @@
                 <target>actions</target>
             </trans-unit>
 
+            <trans-unit id="label.categories">
+                <source>label.categories</source>
+                <target>categories</target>
+            </trans-unit>
+
+            <trans-unit id="label.category">
+                <source>label.category</source>
+                <target>category</target>
+            </trans-unit>
+
             <trans-unit id="label.cities">
                 <source>label.cities</source>
                 <target>cities</target>
+            </trans-unit>
+
+            <trans-unit id="label.city">
+                <source>label.city</source>
+                <target>city</target>
+            </trans-unit>
+
+            <trans-unit id="label.competitions">
+                <source>label.competitions</source>
+                <target>competitions</target>
             </trans-unit>
 
             <trans-unit id="label.contestants">
@@ -59,9 +79,24 @@
                 <target>category open</target>
             </trans-unit>
 
+            <trans-unit id="label.contestant.name">
+                <source>label.contestant.name</source>
+                <target>name</target>
+            </trans-unit>
+
+            <trans-unit id="label.contestant.surname">
+                <source>label.contestant.surname</source>
+                <target>surname</target>
+            </trans-unit>
+
             <trans-unit id="label.contestant.women.index">
                 <source>label.contestant.women.index</source>
                 <target>women</target>
+            </trans-unit>
+
+            <trans-unit id="label.date">
+                <source>label.date</source>
+                <target>date</target>
             </trans-unit>
 
             <trans-unit id="label.date_of_birth">
@@ -102,6 +137,16 @@
             <trans-unit id="label.no">
                 <source>label.no</source>
                 <target>no</target>
+            </trans-unit>
+
+            <trans-unit id="label.place">
+                <source>label.place</source>
+                <target>place</target>
+            </trans-unit>
+
+            <trans-unit id="label.points">
+                <source>label.points</source>
+                <target>points</target>
             </trans-unit>
 
             <trans-unit id="label.rapier">

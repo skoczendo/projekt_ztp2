@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ 'title.categories'|trans }}
+    {{ 'title.scores'|trans }}
 {% endblock %}
 
 {% block body %}
@@ -11,23 +11,33 @@
         {% include 'default/_flash_messages.html.twig' %}
     </div>
 
-    <h1>{{ 'title.categories'|trans }}</h1>
-    {% if categories is defined and categories|length %}
+    <h1>{{ 'title.scores'|trans }}</h1>
+    {% if scores is defined and scores|length %}
         <table class="table table-striped">
             <thead>
             <tr>
                 <th>{{ 'label.id'|trans }}</th>
-                <th>{{ 'label.name'|trans }}</th>
+                <th>{{ 'label.place'|trans }}</th>
+                <th>{{ 'label.points'|trans }}</th>
+                <th>{{ 'label.category'|trans }}</th>
+                <th>{{ 'label.competition'|trans }}</th>
+                <th>{{ 'label.contestant.surname'|trans }}</th>
+                <th>{{ 'label.contestant.name'|trans }}</th>
                 <th scope="col">
                     <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> {{ 'label.actions'|trans }}
                 </th>
             </tr>
             </thead>
             <tbody>
-            {% for item in categories %}
+            {% for item in scores %}
                 <tr>
                     <td>{{ item.id }}</td>
-                    <td>{{ item.name }}</td>
+                    <td>{{ item.place }}</td>
+                    <td>{{ item.points }}</td>
+                    <td>{{ item.category.name }}</td>
+                    <td>{{ item.competition.date|date('Y-m-d') }}</td>
+                    <td>{{ item.contestant.surname }}</td>
+                    <td>{{ item.contestant.name }}</td>
                     <td>
                         <div class="btn-group" role="group" aria-label="{{ 'label.actions'|trans }}">
                             <a href="{{ path('category_view', {'id': item.id}) }}" class="btn btn-default" title="{{ 'action.view'|trans }}">
@@ -68,9 +78,9 @@
             {{ 'message.empty_list'|trans }}
         </div>
     {% endif %}
-
+{#
     <div class="navigation text-center">
         {{ pagerfanta(categories, 'twitter_bootstrap3_translated', { routeName: ('category_index_paginated') }) }}
     </div>
-
+#}
 {% endblock %}
