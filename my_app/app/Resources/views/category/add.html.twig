@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.category.add'|trans }}
+{% endblock %}
+
+{% block body %}
+
+    <h1>
+        {{ 'title.category.add'|trans }}
+    </h1>
+
+    {% include 'default/_form.html.twig' with {
+    attr: {
+    method: 'post',
+    action: url('category_add')
+    },
+    } %}
+
+    <div class="btn-group">
+        <a href="{{ path('category_index') }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
+            {{ 'action.index'|trans }}
+        </a>
+    </div>
+{% endblock %}

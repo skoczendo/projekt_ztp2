@@ -144,4 +144,44 @@ class Competition
     {
         return $this->city;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->contestants = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add contestants
+     *
+     * @param \AppBundle\Entity\Contestant $contestants
+     * @return Competition
+     */
+    public function addContestant(\AppBundle\Entity\Contestant $contestants)
+    {
+        $this->contestants[] = $contestants;
+
+        return $this;
+    }
+
+    /**
+     * Remove contestants
+     *
+     * @param \AppBundle\Entity\Contestant $contestants
+     */
+    public function removeContestant(\AppBundle\Entity\Contestant $contestants)
+    {
+        $this->contestants->removeElement($contestants);
+    }
+
+    /**
+     * Get contestants
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getContestants()
+    {
+        return $this->contestants;
+    }
 }
