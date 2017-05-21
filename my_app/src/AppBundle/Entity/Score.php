@@ -81,6 +81,11 @@ class Score
      *     groups={"score-default"}
      * )
      *
+     * /**
+     * @Assert\GreaterThan(
+     *     value = 0
+     * )
+     *
      */
     protected $place;
 

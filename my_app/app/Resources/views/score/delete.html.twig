@@ -1,30 +1,40 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ 'title.competition.delete'|trans }}
+    {{ 'title.score.delete'|trans }}
 {% endblock %}
 
 {% block body %}
 
     <h1>
-        {{ 'title.competition.delete'|trans }}
+        {{ 'title.score.delete'|trans }}
     </h1>
 
-    {% if competition is defined and competition|length %}
+    {% if score is defined and score|length %}
         <table class="table table-striped">
             <thead>
             <tr>
                 <th>{{ 'label.id'|trans }}</th>
-                <th>{{ 'label.date'|trans }}</th>
-                <th>{{ 'label.city'|trans }}</th>
+                <th>{{ 'label.place'|trans }}</th>
+                <th>{{ 'label.points'|trans }}</th>
+                <th>{{ 'label.category'|trans }}</th>
+                <th>{{ 'label.contestant.surname'|trans }}</th>
+                <th>{{ 'label.contestant.name'|trans }}</th>
             </tr>
             </thead>
             <tbody>
+
+
             <tr>
-                <td>{{ competition.id }}</td>
-                <td>{{ competition.date|date('Y-m-d') }}</td>
-                <td>{{ competition.city.name }}</td>
+                <td>{{ score.id }}</td>
+                <td>{{ score.place }}</td>
+                <td>{{ score.points }}</td>
+                <td>{{ score.category.name }}</td>
+                <td>{{ score.contestant.surname }}</td>
+                <td>{{ score.contestant.name }}</td>
             </tr>
+
+
             </tbody>
         </table>
     {% else %}
@@ -33,7 +43,6 @@
         </p>
     {% endif %}
 
-    <h2>This competition may have some scores!</h2>
     <h2>
         {{ 'question.confirmation'|trans }}
     </h2>
@@ -41,7 +50,7 @@
     {% include 'default/_form.html.twig' with {
     attr: {
     method: 'post',
-    action: url('competition_delete', {'id': competition.id})
+    action: url('score_delete', {'id': score.id})
     },
     submit_label: 'delete'
     } %}

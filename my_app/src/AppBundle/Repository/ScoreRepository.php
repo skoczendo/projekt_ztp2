@@ -2,7 +2,10 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\Score;
 use Doctrine\ORM\EntityRepository;
+use Pagerfanta\Adapter\DoctrineORMAdapter;
+use Pagerfanta\Pagerfanta;
 
 /**
  * ScoreRepository
@@ -12,4 +15,54 @@ use Doctrine\ORM\EntityRepository;
  */
 class ScoreRepository extends EntityRepository
 {
+    /**
+     * Save entity.
+     *
+     * @param Score $score Score entity
+     */
+    public function save(Score $score)
+    {
+        $this->_em->persist($score);
+        $this->_em->flush();
+    }
+
+    /**
+     * Delete entity.
+     *
+     * @param Score $score Score entity
+     */
+    public function delete(Score $score)
+    {
+        $this->_em->remove($score);
+        $this->_em->flush();
+    }
+
+    /**
+     * Gets all records paginated.
+     *
+     * @param int $page Page number
+     *
+     * @return \Pagerfanta\Pagerfanta Result
+     */
+    public function findAllPaginated($page = 1)
+    {
+        $paginator = new Pagerfanta(new DoctrineORMAdapter($this->queryAll(), false));
+        $paginator->setMaxPerPage(Score::NUM_ITEMS);
+        $paginator->setCurrentPage($page);
+
+        return $paginator;
+    }
+
+    /**
+     * Query all entities.
+     *
+     * @return \Doctrine\ORM\Query
+     */
+    protected function queryAll()
+    {
+        return $this->_em->createQuery('
+            SELECT score
+            FROM AppBundle:Score score
+        ');
+    }
 }
