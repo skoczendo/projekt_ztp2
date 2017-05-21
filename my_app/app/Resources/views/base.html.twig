@@ -12,49 +12,62 @@
 
 
 <body>
-    <div class="container">
-        <!-- Fixed navbar -->
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+    <div class="container" id="white_background">
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="http://wierzba.wzks.uj.edu.pl/~13_skoczen/pictures/header/naglowek2.png" alt="header">
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="{{ path('home_index') }}">{{ 'label.home'|trans }}</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'label.contestants'|trans }} <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="{{ path('contestant_index') }}">{{ 'label.contestant.open.index'|trans }}</a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('contestant_index') }}">{{ 'label.contestant.women.index'|trans }}</a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('contestant_index') }}">{{ 'label.contestant.men.index'|trans }}</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="{{ path('school_index') }}">{{ 'label.schools'|trans }}</a></li>
-                        <li><a href="{{ path('city_index') }}">{{ 'label.cities'|trans }}</a></li>
-                        <li><a href="{{ path('competition_index') }}">{{ 'label.competitions'|trans }}</a></li>
-                        <li><a href="{{ path('category_index') }}">{{ 'label.categories'|trans }}</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="../navbar/">Default</a></li>
-                        <li><a href="../navbar-static-top/">Static top</a></li>
-                        <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
-                    </ul>
-                </div><!--/.nav-collapse -->
             </div>
+        </div>
+
+            <!-- Fixed navbar -->
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav nav-pills navbar-left">
+                    <li class="active"><a href="{{ path('home_index') }}">{{ 'label.home'|trans }}</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ 'label.contestants'|trans }} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{ path('contestant_index') }}">{{ 'label.contestant.open.index'|trans }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('contestant_index') }}">{{ 'label.contestant.women.index'|trans }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('contestant_index') }}">{{ 'label.contestant.men.index'|trans }}</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ path('school_index') }}">{{ 'label.schools'|trans }}</a></li>
+                    <li><a href="{{ path('city_index') }}">{{ 'label.cities'|trans }}</a></li>
+                    <li><a href="{{ path('competition_index') }}">{{ 'label.competitions'|trans }}</a></li>
+                    <li><a href="{{ path('category_index') }}">{{ 'label.categories'|trans }}</a></li>
+                </ul>
+                <ul class="nav nav-pills navbar-right">
+                    <li class="active"><a href="../navbar/">Log in</a></li>
+                </ul>
+                </div><!--/.nav-collapse -->
         </nav>
-        {% block body %}{% endblock %}
+        <div id="content">
+            {% block body %}{% endblock %}
+        </div>
     </div>
 
 

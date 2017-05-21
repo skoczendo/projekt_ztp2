@@ -1,0 +1,20 @@
+body {
+    background-color: #d2d4d8;
+}
+
+#white_background {
+    background-color: white;
+    padding: 0px;
+}
+
+#content {
+    padding: 15px;
+}
+
+#navbar_padding {
+    padding: 0px;
+}
+
+.navbar-collapse collapse{
+    margin: : 0px;
+}

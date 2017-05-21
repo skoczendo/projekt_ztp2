@@ -7345,5 +7345,23 @@ fieldset[disabled] .btn-danger.active {
 /*# sourceMappingURL=bootstrap-theme.css.map */
 
 body {
-    background-color: lightblue;
+    background-color: #d2d4d8;
 }
+
+#white_background {
+    background-color: white;
+    padding: 0px;
+    max-width: 1024px;
+    min-height: 1024px;
+}
+
+#content {
+    padding: 20px;
+}
+ .navbar-right {
+     padding: 10px;
+ }
+
+.navbar-left {
+     padding: 10px;
+ }
