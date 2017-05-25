@@ -52,6 +52,39 @@ class ContestantController extends Controller
     }
 
     /**
+     * Index by sex action.
+     *
+     * @param integer $page Current page number
+     *
+     * @param string $sex Sex
+     *
+     * @return \Symfony\Component\HttpFoundation\Response HTTP Response
+     *
+     * @Route(
+     *     "/sex/{sex}",
+     *     defaults={"page": 1},
+     *     name="contestant_index_sex",
+     * )
+     * @Route(
+     *     "/sex/{sex}/page/{page}",
+     *     requirements={"page": "[1-9]\d*"},
+     *     name="contestant_index_sex_paginated",
+     * )
+     * @Method("GET")
+     */
+    public function indexBySexAction($page, $sex)
+    {
+        $contestants = $this->get('app.repository.contestant')->findBySexPaginated($sex, $page);
+
+        return $this->render(
+            'contestant/index.html.twig',
+            ['contestants' => $contestants]
+        );
+    }
+
+
+
+    /**
      * View action.
      *
      * @return \Symfony\Component\HttpFoundation\Response Response

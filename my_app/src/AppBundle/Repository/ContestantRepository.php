@@ -60,11 +60,54 @@ class ContestantRepository extends EntityRepository
      */
     protected function queryAll()
     {
+        $qb = $this->createQueryBuilder('b');
+        $qb->select('b')
+            ->orderBy('b.surname', 'ASC');
+
+        return $qb;
+    }
+
+    /**
+     * Gets contestants by sex.
+     *
+     * @param string $sex Sex
+     *
+     * @param integer $page Page number
+     *
+     * @return \Doctrine\ORM\Query
+     */
+    public function findBySexPaginated($sex, $page = 1)
+    {
+        $qb = $this->createQueryBuilder('b');
+        $qb->select('b')
+            ->where('b.sex = :sex')
+            ->setParameter(':sex', $sex);
+
+       // dump($qb->getQuery()->getResult());
+
+        $paginator = new Pagerfanta(new DoctrineORMAdapter($qb, false));
+        $paginator->setMaxPerPage(Contestant::NUM_ITEMS);
+        $paginator->setCurrentPage($page);
+
+        return $paginator;
+
+    }
+
+
+    /**
+     * Query all entities.
+     *
+     * @return \Doctrine\ORM\Query
+     */
+    /*
+    protected function queryAll()
+    {
         return $this->_em->createQuery('
             SELECT contestant
             FROM AppBundle:Contestant contestant
         ');
     }
+    */
 
 
 }

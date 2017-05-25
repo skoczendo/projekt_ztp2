@@ -60,9 +60,10 @@ class CategoryRepository extends EntityRepository
      */
     protected function queryAll()
     {
-        return $this->_em->createQuery('
-            SELECT category
-            FROM AppBundle:Category category
-        ');
+        $qb = $this->createQueryBuilder('b');
+        $qb->select('b')
+            ->orderBy('b.name', 'ASC');
+
+        return $qb;
     }
 }

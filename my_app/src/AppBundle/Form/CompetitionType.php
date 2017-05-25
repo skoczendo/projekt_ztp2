@@ -4,7 +4,9 @@
  */
 namespace AppBundle\Form;
 
+use AppBundle\Entity\City;
 use AppBundle\Entity\Competition;
+use Doctrine\DBAL\Types\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
@@ -29,6 +31,20 @@ class CompetitionType extends AbstractType
             [
                 'label' => 'label.date',
                 'required' => true,
+            ]
+        )
+        ->add(
+            'city',
+            EntityType::class,
+            [
+                'class' => City::class,
+                'choice_label' => function ($city) {
+                    return $city->getName();
+                },
+                'label' => 'label.city',
+                'required' => true,
+
+                'multiple' => false,
             ]
         );
     }

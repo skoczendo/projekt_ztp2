@@ -60,9 +60,10 @@ class CompetitionRepository extends EntityRepository
      */
     protected function queryAll()
     {
-        return $this->_em->createQuery('
-            SELECT competition
-            FROM AppBundle:Competition competition
-        ');
+        $qb = $this->createQueryBuilder('b');
+        $qb->select('b')
+            ->orderBy('b.date', 'DESC');
+
+        return $qb;
     }
 }

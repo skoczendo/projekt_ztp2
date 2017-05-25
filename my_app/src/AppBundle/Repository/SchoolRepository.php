@@ -60,9 +60,10 @@ class SchoolRepository extends EntityRepository
      */
     protected function queryAll()
     {
-        return $this->_em->createQuery('
-            SELECT school
-            FROM AppBundle:School school
-        ');
+        $qb = $this->createQueryBuilder('b');
+        $qb->select('b')
+            ->orderBy('b.name', 'ASC');
+
+        return $qb;
     }
 }

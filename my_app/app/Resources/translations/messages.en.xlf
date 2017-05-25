@@ -2,121 +2,149 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" datatype="plaintext" original="file.ext">
         <body>
+            <trans-unit id="epee">
+                <source>epee</source>
+                <target>szpada</target>
+            </trans-unit>
+
+            <trans-unit id="sabre">
+                <source>sabre</source>
+                <target>szabla</target>
+            </trans-unit>
+
+
+
+
             <trans-unit id="action.add">
                 <source>action.add</source>
-                <target>add</target>
+                <target>dodaj nowy</target>
+            </trans-unit>
+
+            <trans-unit id="action.add.score">
+                <source>action.add.score</source>
+                <target>dodaj nowy wynik</target>
             </trans-unit>
 
             <trans-unit id="action.delete">
                 <source>action.delete</source>
-                <target>delete</target>
+                <target>usuń</target>
             </trans-unit>
 
             <trans-unit id="action.edit">
                 <source>action.edit</source>
-                <target>edit</target>
+                <target>edytuj</target>
             </trans-unit>
 
             <trans-unit id="action.index">
                 <source>action.index</source>
-                <target>Back to the list</target>
+                <target>powrót do listy</target>
             </trans-unit>
 
             <trans-unit id="action.save">
                 <source>action.save</source>
-                <target>save</target>
+                <target>zapisz</target>
             </trans-unit>
 
             <trans-unit id="action.view">
                 <source>action.view</source>
-                <target>view</target>
+                <target>zobacz</target>
             </trans-unit>
 
 
 
             <trans-unit id="label.actions">
                 <source>label.actions</source>
-                <target>actions</target>
+                <target>operacje</target>
             </trans-unit>
 
             <trans-unit id="label.categories">
                 <source>label.categories</source>
-                <target>categories</target>
+                <target>kategorie</target>
             </trans-unit>
 
             <trans-unit id="label.category">
                 <source>label.category</source>
-                <target>category</target>
+                <target>kategoria</target>
             </trans-unit>
 
             <trans-unit id="label.cities">
                 <source>label.cities</source>
-                <target>cities</target>
+                <target>miasta</target>
             </trans-unit>
 
             <trans-unit id="label.city">
                 <source>label.city</source>
-                <target>city</target>
+                <target>miasto</target>
             </trans-unit>
 
             <trans-unit id="label.competitions">
                 <source>label.competitions</source>
-                <target>competitions</target>
+                <target>zawody</target>
+            </trans-unit>
+
+            <trans-unit id="label.competition">
+                <source>label.competition</source>
+                <target>data zawodów</target>
             </trans-unit>
 
             <trans-unit id="label.contestants">
                 <source>label.contestants</source>
-                <target>contestants</target>
+                <target>zawodnicy</target>
+            </trans-unit>
+
+            <trans-unit id="label.contestant">
+                <source>label.contestant</source>
+                <target>zawodnik</target>
             </trans-unit>
 
             <trans-unit id="label.contestant.men.index">
                 <source>label.contestant.men.index</source>
-                <target>men</target>
+                <target>mężczyźni</target>
             </trans-unit>
 
             <trans-unit id="label.contestant.open.index">
                 <source>label.contestant.open.index</source>
-                <target>category open</target>
+                <target>kategoria open</target>
             </trans-unit>
 
             <trans-unit id="label.contestant.name">
                 <source>label.contestant.name</source>
-                <target>name</target>
+                <target>imię</target>
             </trans-unit>
 
             <trans-unit id="label.contestant.surname">
                 <source>label.contestant.surname</source>
-                <target>surname</target>
+                <target>nazwisko</target>
             </trans-unit>
 
             <trans-unit id="label.contestant.women.index">
                 <source>label.contestant.women.index</source>
-                <target>women</target>
+                <target>kobiety</target>
             </trans-unit>
 
             <trans-unit id="label.date">
                 <source>label.date</source>
-                <target>date</target>
+                <target>data</target>
             </trans-unit>
 
             <trans-unit id="label.date_of_birth">
                 <source>label.date_of_birth</source>
-                <target>date of birth</target>
+                <target>data urodzenia</target>
             </trans-unit>
 
             <trans-unit id="label.epee">
                 <source>label.epee</source>
-                <target>epee</target>
+                <target>szpada</target>
             </trans-unit>
 
             <trans-unit id="label.female">
                 <source>label.female</source>
-                <target>female</target>
+                <target>kobieta</target>
             </trans-unit>
 
             <trans-unit id="label.home">
                 <source>label.home</source>
-                <target>home</target>
+                <target>strona główna</target>
             </trans-unit>
 
             <trans-unit id="label.id">
@@ -124,29 +152,34 @@
                 <target>id</target>
             </trans-unit>
 
+            <trans-unit id="label.login">
+                <source>label.login</source>
+                <target>zaloguj się</target>
+            </trans-unit>
+
             <trans-unit id="label.male">
                 <source>label.male</source>
-                <target>male</target>
+                <target>mężczyzna</target>
             </trans-unit>
 
             <trans-unit id="label.name">
                 <source>label.name</source>
-                <target>name</target>
+                <target>imię</target>
             </trans-unit>
 
             <trans-unit id="label.no">
                 <source>label.no</source>
-                <target>no</target>
+                <target>nie</target>
             </trans-unit>
 
             <trans-unit id="label.place">
                 <source>label.place</source>
-                <target>place</target>
+                <target>miejsce</target>
             </trans-unit>
 
             <trans-unit id="label.points">
                 <source>label.points</source>
-                <target>points</target>
+                <target>punkty</target>
             </trans-unit>
 
             <trans-unit id="label.rapier">
@@ -156,93 +189,206 @@
 
             <trans-unit id="label.sabre">
                 <source>label.sabre</source>
-                <target>sabre</target>
+                <target>szabla</target>
             </trans-unit>
 
             <trans-unit id="label.school">
                 <source>label.school</source>
-                <target>school</target>
+                <target>szkoła</target>
             </trans-unit>
 
             <trans-unit id="label.schools">
                 <source>label.schools</source>
-                <target>schools</target>
+                <target>szkoły</target>
+            </trans-unit>
+
+            <trans-unit id="label.scores">
+                <source>label.scores</source>
+                <target>Wyniki:</target>
             </trans-unit>
 
             <trans-unit id="label.sex">
                 <source>label.sex</source>
-                <target>sex</target>
+                <target>płeć</target>
             </trans-unit>
 
             <trans-unit id="label.surname">
                 <source>label.surname</source>
-                <target>surame</target>
+                <target>nazwisko</target>
             </trans-unit>
 
             <trans-unit id="label.yes">
                 <source>label.yes</source>
-                <target>yes</target>
+                <target>tak</target>
             </trans-unit>
 
 
             <trans-unit id="message.created_successfully ">
                 <source>message.created_successfully </source>
-                <target>Record has been created successfully!</target>
+                <target>Rekord został utworzony pomyślnie!</target>
             </trans-unit>
 
             <trans-unit id="message.empty_list">
                 <source>message.empty_list</source>
-                <target>The list of records is empty!</target>
+                <target>Lista rekordów jest pusta!</target>
             </trans-unit>
 
 
 
+            <trans-unit id="title.categories">
+                <source>title.categories</source>
+                <target>Lista kategorii</target>
+            </trans-unit>
+
+            <trans-unit id="title.category">
+                <source>title.category</source>
+                <target>Kategoria</target>
+            </trans-unit>
+
+            <trans-unit id="title.category.add">
+                <source>title.category.add</source>
+                <target>Dodaj kategorię</target>
+            </trans-unit>
+
+            <trans-unit id="title.category.edit">
+                <source>title.category.edit</source>
+                <target>Edytuj kategorię</target>
+            </trans-unit>
+
+            <trans-unit id="title.category.delete">
+                <source>title.category.delete</source>
+                <target>Usuń kategorię</target>
+            </trans-unit>
+
+            <trans-unit id="title.cities">
+                <source>title.cities</source>
+                <target>Miasta</target>
+            </trans-unit>
+
+            <trans-unit id="title.city">
+                <source>title.city</source>
+                <target>Miasto</target>
+            </trans-unit>
+
+            <trans-unit id="title.city.add">
+                <source>title.city.add</source>
+                <target>Dodaj miasto</target>
+            </trans-unit>
+
+            <trans-unit id="title.city.edit">
+                <source>title.city.edit</source>
+                <target>Edytuj miasto</target>
+            </trans-unit>
+
+            <trans-unit id="title.city.delete">
+                <source>title.city.delete</source>
+                <target>Usuń miasto</target>
+            </trans-unit>
+
             <trans-unit id="title.contestant">
                 <source>title.contestant</source>
-                <target>Contestant profile</target>
+                <target>Profil zawodnika</target>
+            </trans-unit>
+
+            <trans-unit id="title.competitions">
+                <source>title.competitions</source>
+                <target>Lista zawodów</target>
+            </trans-unit>
+
+            <trans-unit id="title.competition">
+                <source>title.competition</source>
+                <target>Zawody</target>
+            </trans-unit>
+
+            <trans-unit id="title.competition.add">
+                <source>title.competition.add</source>
+                <target>Dodaj zawody</target>
+            </trans-unit>
+
+            <trans-unit id="title.competition.edit">
+                <source>title.competition.edit</source>
+                <target>Edytuj zawody</target>
+            </trans-unit>
+
+            <trans-unit id="title.competition.delete">
+                <source>title.competition.delete</source>
+                <target>Usuń zawody</target>
             </trans-unit>
 
             <trans-unit id="title.contestant.add">
                 <source>title.contestant.add</source>
-                <target>Add contestant</target>
+                <target>Dodaj zawodnika</target>
+            </trans-unit>
+
+            <trans-unit id="title.contestant.edit">
+                <source>title.contestant.edit</source>
+                <target>Edytuj zawodnika</target>
+            </trans-unit>
+
+            <trans-unit id="title.contestant.delete">
+                <source>title.contestant.delete</source>
+                <target>Usuń zawodnika</target>
             </trans-unit>
 
             <trans-unit id="title.contestants">
                 <source>title.contestants</source>
-                <target>List of contestants</target>
+                <target>Lista zawodników</target>
             </trans-unit>
 
             <trans-unit id="title.enrolled.list">
                 <source>title.enrolled.list</source>
-                <target>List of contestants from this school</target>
+                <target>Lista zawodników z tej szkoły</target>
+            </trans-unit>
+
+            <trans-unit id="title.home">
+                <source>title.home</source>
+                <target>Strona główna</target>
             </trans-unit>
 
             <trans-unit id="title.school">
                 <source>title.school</source>
-                <target>School</target>
+                <target>Szkoła</target>
             </trans-unit>
 
             <trans-unit id="title.school.delete">
                 <source>title.school.delete</source>
-                <target>Delete school</target>
+                <target>Usuń szkołę</target>
             </trans-unit>
 
             <trans-unit id="title.school.edit">
                 <source>title.school.edit</source>
-                <target>Edit school</target>
+                <target>Edytuj szkołę</target>
             </trans-unit>
 
             <trans-unit id="title.schools">
                 <source>title.schools</source>
-                <target>List of schools</target>
+                <target>Lista szkół</target>
+            </trans-unit>
+
+            <trans-unit id="title.score.add">
+                <source>title.score.add</source>
+                <target>Dodaj wynik</target>
+            </trans-unit>
+
+            <trans-unit id="title.score.edit">
+                <source>title.score.edit</source>
+                <target>Edytuj wynik</target>
+            </trans-unit>
+
+            <trans-unit id="title.score.delete">
+                <source>title.score.delete</source>
+                <target>Usuń wynik</target>
             </trans-unit>
 
 
 
-
+            <trans-unit id="question.competition">
+                <source>question.competition</source>
+                <target>Te zawody mogą zawierać listę wyników!</target>
+            </trans-unit>
             <trans-unit id="question.confirmation">
                 <source>question.confirmation</source>
-                <target>Are You sure that You want to delete this record?</target>
+                <target>Jesteś pewien, że chcesz usunąć ten rekord?</target>
             </trans-unit>
 
 

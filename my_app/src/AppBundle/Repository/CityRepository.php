@@ -60,9 +60,10 @@ class CityRepository extends EntityRepository
      */
     protected function queryAll()
     {
-        return $this->_em->createQuery('
-            SELECT city
-            FROM AppBundle:City city
-        ');
+        $qb = $this->createQueryBuilder('b');
+        $qb->select('b')
+            ->orderBy('b.name', 'ASC');
+
+        return $qb;
     }
 }

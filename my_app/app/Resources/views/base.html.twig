@@ -23,7 +23,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="http://wierzba.wzks.uj.edu.pl/~13_skoczen/pictures/header/naglowek2.png" alt="header">
+                    <img src="http://wierzba.wzks.uj.edu.pl/~13_skoczen/pictures/header/naglowek2.png" alt="header" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -48,10 +48,10 @@
                                 <a href="{{ path('contestant_index') }}">{{ 'label.contestant.open.index'|trans }}</a>
                             </li>
                             <li>
-                                <a href="{{ path('contestant_index') }}">{{ 'label.contestant.women.index'|trans }}</a>
+                                <a href="{{ path('contestant_index_sex', {'sex': 'f'}) }}">{{ 'label.contestant.women.index'|trans }}</a>
                             </li>
                             <li>
-                                <a href="{{ path('contestant_index') }}">{{ 'label.contestant.men.index'|trans }}</a>
+                                <a href="{{ path('contestant_index_sex', {'sex': 'm'}) }}">{{ 'label.contestant.men.index'|trans }}</a>
                             </li>
                         </ul>
                     </li>
@@ -61,7 +61,7 @@
                     <li><a href="{{ path('category_index') }}">{{ 'label.categories'|trans }}</a></li>
                 </ul>
                 <ul class="nav nav-pills navbar-right">
-                    <li class="active"><a href="../navbar/">Log in</a></li>
+                    <li class="active"><a href="../navbar/">{{ 'label.login'|trans }}</a></li>
                 </ul>
                 </div><!--/.nav-collapse -->
         </nav>
