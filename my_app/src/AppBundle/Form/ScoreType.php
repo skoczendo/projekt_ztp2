@@ -29,6 +29,7 @@ class ScoreType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $builder->add(
             'competition',
             EntityType::class,
@@ -41,6 +42,9 @@ class ScoreType extends AbstractType
                 'label' => 'label.competition',
                 'required' => true,
                 'multiple' => false,
+                'attr' => [
+                    'disabled' => true,
+                ],
             ]
         )
         ->add(
@@ -54,6 +58,9 @@ class ScoreType extends AbstractType
                 'label' => 'label.category',
                 'required' => true,
                 'multiple' => false,
+                'attr' => [
+                    'disabled' => (isset($options['data']) && $options['data']->getId()),
+                ],
             ]
         )
         ->add(
@@ -86,8 +93,27 @@ class ScoreType extends AbstractType
                 'label' => 'label.points',
                 'required' => true,
             ]
-        )
-        ;
+        );
+
+        $builder->addEventListener(
+            FormEvents::PRE_SUBMIT,
+            function (FormEvent $event) {
+                $form = $event->getForm();
+                $data = $event->getData();
+                $normData = $form->getNormData();
+
+                dump($normData);
+                dump($data);
+
+                if ($normData->getId()) {
+                    $data['category'] = $normData->getCategory()->getId();
+                }
+                $data['competition'] = $normData->getCompetition()->getId();
+                $event->setData($data);
+                dump($data);
+
+            }
+        );
     }
 
     /**

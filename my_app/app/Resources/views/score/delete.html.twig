@@ -56,7 +56,7 @@
     } %}
 
     <div class="btn-group">
-        <a href="{{ path('competition_index') }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
+        <a href="{{ path('competition_view', {'id': competition_id}) }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
             {{ 'action.index'|trans }}
         </a>
     </div>

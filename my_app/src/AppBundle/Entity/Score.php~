@@ -81,6 +81,11 @@ class Score
      *     groups={"score-default"}
      * )
      *
+     * /**
+     * @Assert\GreaterThan(
+     *     value = 0
+     * )
+     *
      */
     protected $place;
 
@@ -204,5 +209,28 @@ class Score
     public function getCompetition()
     {
         return $this->competition;
+    }
+
+    /**
+     * Set contestant
+     *
+     * @param \AppBundle\Entity\Contestant $contestant
+     * @return Score
+     */
+    public function setContestant(\AppBundle\Entity\Contestant $contestant = null)
+    {
+        $this->contestant = $contestant;
+
+        return $this;
+    }
+
+    /**
+     * Get contestant
+     *
+     * @return \AppBundle\Entity\Contestant 
+     */
+    public function getContestant()
+    {
+        return $this->contestant;
     }
 }
