@@ -59,8 +59,21 @@
                     <li><a href="{{ path('city_index') }}">{{ 'label.cities'|trans }}</a></li>
                     <li><a href="{{ path('competition_index') }}">{{ 'label.competitions'|trans }}</a></li>
                 </ul>
+
+
                 <ul class="nav nav-pills navbar-right">
-                    <li class="active"><a href="../navbar/">{{ 'label.login'|trans }}</a></li>
+                    {% block login_info %}
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                            <a href="{{ path('fos_user_security_logout') }}">
+                                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                            </a>
+                        {% else %}
+                            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                        {% endif %}
+                    {% endblock %}
+                    <!--<li class="active"><a href="../navbar/">" 'label.login'|trans }}</a></li> -->
+
                 </ul>
                 </div><!--/.nav-collapse -->
         </nav>

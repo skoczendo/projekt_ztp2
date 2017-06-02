@@ -49,3 +49,9 @@ services:
             public: false
             tags:
                 - { name: twig.extension }
+
+    app.form.handler.registration:
+        class: AppBundle\Form\Handler\RegistrationFormHandler
+        arguments: ["@fos_user.registration.form", "@request", "@fos_user.user_manager", "@fos_user.mailer", "@fos_user.util.token_generator"]
+        scope: request
+        public: false
