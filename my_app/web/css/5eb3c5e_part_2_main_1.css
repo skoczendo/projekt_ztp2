@@ -1,5 +1,5 @@
 body {
-    background-color: #d2d4d8;
+    background-color: #f2f4f7;
 }
 
 #white_background {
@@ -7,6 +7,10 @@ body {
     padding: 0px;
     max-width: 1024px;
     min-height: 1024px;
+}
+
+#navbar {
+    background-color: white;
 }
 
 #content {
@@ -19,3 +23,4 @@ body {
 .navbar-left {
      padding: 10px;
  }
+

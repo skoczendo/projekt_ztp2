@@ -57,17 +57,17 @@
             </tbody>
         </table>
 
-        <div class="btn-group">
-            <a href="{{ path('school_add') }}" class="btn btn-default" title="{{ 'action.add'|trans }}">
-                {{ 'action.add'|trans }}
-            </a>
-        </div>
-
     {% else %}
         <div class="alert alert-warning" role="alert">
             {{ 'message.empty_list'|trans }}
         </div>
     {% endif %}
+
+    <div class="btn-group">
+        <a href="{{ path('school_add') }}" class="btn btn-default" title="{{ 'action.add'|trans }}">
+            {{ 'action.add'|trans }}
+        </a>
+    </div>
 
     <div class="navigation text-center">
         {{ pagerfanta(schools, 'twitter_bootstrap3_translated', { routeName: ('school_index_paginated') }) }}

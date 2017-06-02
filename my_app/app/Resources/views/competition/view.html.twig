@@ -89,13 +89,6 @@
                 </tbody>
             </table>
 
-            <div class="btn-group">
-            <a href="{{ path('score_add', {'competition_id': id }) }}" class="btn btn-default" title="{{ 'action.add.score'|trans }}">
-                {{ 'action.add.score'|trans }}
-            </a>
-            <br><br>
-            </div>
-
 
 
             <h3>{{ 'label.sabre'|trans }}</h3>
@@ -142,13 +135,6 @@
                 {% endfor %}
                 </tbody>
             </table>
-
-            <div class="btn-group">
-                <a href="{{ path('score_add', {'competition_id': id }) }}" class="btn btn-default" title="{{ 'action.add.score'|trans }}">
-                    {{ 'action.add.score'|trans }}
-                </a>
-                <br><br>
-            </div>
 
 
 
@@ -198,14 +184,6 @@
                 </tbody>
             </table>
 
-            <div class="btn-group">
-                <a href="{{ path('score_add', {'competition_id': id }) }}" class="btn btn-default" title="{{ 'action.add.score'|trans }}">
-                    {{ 'action.add.score'|trans }}
-                </a>
-                <br><br>
-            </div>
-
-
         {% else %}
             <div class="alert alert-warning" role="alert">
                 {{ 'message.empty_list'|trans }}
@@ -219,6 +197,12 @@
         </div>
     {% endif %}
 
+    <div class="btn-group">
+        <a href="{{ path('score_add', {'competition_id': id }) }}" class="btn btn-default" title="{{ 'action.add.score'|trans }}">
+            {{ 'action.add.score'|trans }}
+        </a>
+    </div>
+    <br><br>
 
     <div class="btn-group">
         <a href="{{ path('competition_index') }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
