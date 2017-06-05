@@ -7,6 +7,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
+use AppBundle\Validator\Constraints as AcmeAssert;
 
 /**
  * Class City.
@@ -24,6 +25,12 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     groups={"cities-default"},
  *     fields={"name"}
  * )
+ *
+ * @AcmeAssert\SafeDelete(
+ *     field="competitions",
+ *     groups={"cities-delete"},
+ * )
+ *
  */
 class City
 {

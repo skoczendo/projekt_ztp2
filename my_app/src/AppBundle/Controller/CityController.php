@@ -12,6 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\Valid;
 
 /**
  * Class CityController.
@@ -163,6 +164,23 @@ class CityController extends Controller
      * @Method({"GET", "POST"})
      */
     public function deleteAction(Request $request,City $city){
+
+
+        $errors = $this->get('validator')->validateValue(
+            $city,
+            new Valid(),
+            'cities-delete'
+        );
+
+        dump($errors->violations);
+
+
+
+        if ($errors) {
+            $this->addFlash('warning', 'message.error');
+            return $this->redirectToRoute('city_index');
+        }
+
         $form = $this->createForm(FormType::class, $city);
         $form->handleRequest($request);
 
