@@ -172,7 +172,7 @@ class CityController extends Controller
             'cities-delete'
         );
 
-        dump($errors->violations);
+        dump($errors->count());
 
 
 
