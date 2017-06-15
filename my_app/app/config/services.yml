@@ -44,6 +44,12 @@ services:
         arguments:
             - AppBundle\Entity\Score
 
+    user.repository.user:
+        class: Doctrine\ORM\EntityRepository
+        factory: ['@doctrine.orm.default_entity_manager', getRepository]
+        arguments:
+            - UserBundle\Entity\User
+
     app.twig_extension:
             class: AppBundle\Twig\AppExtension
             public: false

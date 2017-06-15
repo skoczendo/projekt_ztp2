@@ -12,6 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\Valid;
 
 /**
  * Class SchoolController.
@@ -173,6 +174,18 @@ class SchoolController extends Controller
      * @Method({"GET", "POST"})
      */
     public function deleteAction(Request $request,School $school){
+
+        $errors = $this->get('validator')->validateValue(
+            $school,
+            new Valid(),
+            'schools-delete'
+        );
+
+        if ($errors->count()) {
+            $this->addFlash('warning', 'message.cant_delete');
+            return $this->redirectToRoute('school_index');
+        }
+
         $form = $this->createForm(FormType::class, $school);
         $form->handleRequest($request);
 

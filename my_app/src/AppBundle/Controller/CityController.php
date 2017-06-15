@@ -172,12 +172,8 @@ class CityController extends Controller
             'cities-delete'
         );
 
-        dump($errors->count());
-
-
-
-        if ($errors) {
-            $this->addFlash('warning', 'message.error');
+        if ($errors->count()) {
+            $this->addFlash('warning', 'message.cant_delete');
             return $this->redirectToRoute('city_index');
         }
 

@@ -15,6 +15,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User extends BaseUser
 {
+    const NUM_ITEMS = 2;
+
     /**
      * @ORM\Id
      * @ORM\Column(

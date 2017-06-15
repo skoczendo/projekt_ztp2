@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.user.delete'|trans }}
+{% endblock %}
+
+{% block body %}
+
+    <h1>
+        {{ 'title.user.delete'|trans }}
+    </h1>
+
+    {% if user is defined and user|length %}
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ 'label.username'|trans }}</th>
+                <th>{{ 'label.email'|trans }}</th>
+                <th>{{ 'label.last.login'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.lastLogin|date('Y-m-d') }}</td>
+            </tr>
+            </tbody>
+        </table>
+    {% else %}
+        <p>
+            {{ 'message.empty_list'|trans }}
+        </p>
+    {% endif %}
+
+    <h2>
+        {{ 'question.confirmation'|trans }}
+    </h2>
+
+    {% include 'default/_form.html.twig' with {
+    attr: {
+    method: 'post',
+    action: url('user_delete', {'username': user.username})
+    },
+    submit_label: 'delete'
+    } %}
+
+    <div class="btn-group">
+        <a href="{{ path('user_index') }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
+            {{ 'action.index'|trans }}
+        </a>
+    </div>
+{% endblock %}
