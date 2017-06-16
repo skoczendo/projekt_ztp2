@@ -14,30 +14,8 @@
 <body>
     <div class="container" id="white_background">
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            </ol>
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="http://wierzba.wzks.uj.edu.pl/~13_skoczen/pictures/header/naglowek2.png" alt="header" class="img-fluid">
-                </div>
-            </div>
-        </div>
-
-            <!-- Fixed navbar -->
         <nav class="navbar navbar-default">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav nav-pills navbar-left">
                     <li class="active"><a href="{{ path('home_index') }}">{{ 'label.home'|trans }}</a></li>
@@ -55,31 +33,79 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="{{ path('school_index') }}">{{ 'label.schools'|trans }}</a></li>
-                    <li><a href="{{ path('city_index') }}">{{ 'label.cities'|trans }}</a></li>
                     <li><a href="{{ path('competition_index') }}">{{ 'label.competitions'|trans }}</a></li>
+                    <li>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <a href="{{ path('school_index') }}">{{ 'label.schools'|trans }}</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <a href="{{ path('city_index') }}">{{ 'label.cities'|trans }}</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <a href="{{ path('user_index') }}">{{ 'label.admins'|trans }}</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <a href="{{path('fos_user_profile_show') }}">{{ 'label.your.account'|trans }}</a>
+                        {% endif %}
+                    </li>
                 </ul>
                 <!-- Logging buttons -->
                 <ul class="nav nav-pills navbar-right">
-                    <li>
-                        {% block login_info %}
-                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                                <b>{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</b>
+                    {% block login_info %}
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <li>
+                                <p class="navbar-text">{{  app.user.username }}</p>
+                            </li>
+                            <li>
                                 <a href="{{ path('fos_user_security_logout') }}" class="btn btn-primary">
                                     {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                                 </a>
-                            {% else %}
+                            </li>
+                        {% else %}
+                            <li>
+                                <a href="{{ path('fos_user_resetting_request') }}" class="btn btn-secondary" title="{{ 'action.forgot.password'|trans }}">
+                                    {{ 'action.forgot.password'|trans }}
+                                </a>
+                            </li>
+                            <li>
                                 <a href="{{ path('fos_user_security_login') }}" class="btn btn-primary">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-                            {% endif %}
-                        {% endblock %}
-                        <!--<li class="active"><a href="../navbar/">" 'label.login'|trans }}</a></li> -->
-                    </li>
+                            </li>
+                        {% endif %}
+                    {% endblock %}
+                    <!--<li class="active"><a href="../navbar/">" 'label.login'|trans }}</a></li> -->
                 </ul>
-                </div><!--/.nav-collapse -->
+            </div><!--/.nav-collapse -->
         </nav>
+
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="http://wierzba.wzks.uj.edu.pl/~13_skoczen/pictures/header/naglowek2.png" alt="header" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+
+            <!-- navbar -->
+
+
         <div id="content">
             {% block body %}{% endblock %}
         </div>
+
     </div>
 
 

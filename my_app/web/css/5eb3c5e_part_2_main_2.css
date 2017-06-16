@@ -11,6 +11,12 @@ body {
 
 #navbar {
     background-color: white;
+    padding-left: 0px;
+}
+
+.navbar-default {
+    box-shadow: none;
+    border: none;
 }
 
 #content {
@@ -32,7 +38,13 @@ input {
 #login_form {
     margin: auto;
     width: 50%;
-    border: 3px solid #e6f2ff;
+    border: 3px solid;
+    border-color: #cce6ff;
     padding: 15px;
     padding-left: 30px;
+}
+
+.alert {
+    margin: 0px;
+    display:block;
 }

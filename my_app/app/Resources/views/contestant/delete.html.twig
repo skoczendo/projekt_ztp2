@@ -59,7 +59,7 @@
                         {{ 'label.no'|trans }}
                     {% endif %}
                 </td>
-                <td>SCHOOL!!!</td>
+                <td>{{ contestant.school.name }}</td>
             </tr>
             </tbody>
         </table>
@@ -81,6 +81,8 @@
     submit_label: 'delete'
     } %}
 
+    <br>
+    <br>
     <div class="btn-group">
         <a href="{{ path('contestant_index') }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
             {{ 'action.index'|trans }}

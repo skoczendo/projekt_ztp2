@@ -102,10 +102,13 @@ class ContestantController extends Controller
                 'No contestant found for id '.$id
             );
         } else {
+            $scores = $this->get('app.repository.score')->findByContestant($id);
+            dump($scores);
             return $this->render(
                 'contestant/view.html.twig',
                 [
                     'contestant' => $contestant,
+                    'scores' => $scores,
                     'id' => $id
                 ]
             );

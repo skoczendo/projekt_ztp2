@@ -1,0 +1,13 @@
+<div class="fos_user_user_show">
+    <h1>{{ 'label.your.account'|trans }}</h1>
+    <h2>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}: </h2>
+    <p>{{ user.username }}</p>
+    <h2>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: </h2>
+    <p>{{ user.email }}</p>
+    <br>
+    <div class="btn-group">
+        <a href="{{ path('fos_user_change_password') }}" class="btn btn-default" title="{{ 'action.change.password'|trans }}">
+            {{ 'action.change.password'|trans }}
+        </a>
+    </div>
+</div>

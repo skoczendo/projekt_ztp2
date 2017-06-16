@@ -66,4 +66,5 @@ class ScoreRepository extends EntityRepository
 
         return $qb;
     }
+
 }

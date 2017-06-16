@@ -25,7 +25,12 @@
                 <target>dodaj nowy wynik</target>
             </trans-unit>
 
-            <trans-unit id="action.delete">
+            <trans-unit id="action.change.password">
+                <source>action.change.password</source>
+                <target>zmień hasło</target>
+            </trans-unit>
+
+             <trans-unit id="action.delete">
                 <source>action.delete</source>
                 <target>usuń</target>
             </trans-unit>
@@ -33,6 +38,11 @@
             <trans-unit id="action.edit">
                 <source>action.edit</source>
                 <target>edytuj</target>
+            </trans-unit>
+
+            <trans-unit id="action.forgot.password">
+                <source>action.forgot.password</source>
+                <target>zapomniałem hasła</target>
             </trans-unit>
 
             <trans-unit id="action.index">
@@ -55,6 +65,11 @@
             <trans-unit id="label.actions">
                 <source>label.actions</source>
                 <target>operacje</target>
+            </trans-unit>
+
+            <trans-unit id="label.admins">
+                <source>label.admins</source>
+                <target>administratorzy</target>
             </trans-unit>
 
             <trans-unit id="label.categories">
@@ -220,6 +235,11 @@
             <trans-unit id="label.yes">
                 <source>label.yes</source>
                 <target>tak</target>
+            </trans-unit>
+
+            <trans-unit id="label.your.account">
+                <source>label.your.account</source>
+                <target>moje konto</target>
             </trans-unit>
 
 

@@ -8,7 +8,6 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>{{ 'label.id'|trans }}</th>
                 <th>{{ 'label.surname'|trans }}</th>
                 <th>{{ 'label.name'|trans }}</th>
                 <th>{{ 'label.sex'|trans }}</th>
@@ -17,14 +16,15 @@
                 <th>{{ 'label.sabre'|trans }}</th>
                 <th>{{ 'label.rapier'|trans }}</th>
                 <th>{{ 'label.school'|trans }}</th>
-                <th scope="col">
-                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>{{ 'label.actions'|trans }}
-                </th>
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    <th scope="col">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>{{ 'label.actions'|trans }}
+                    </th>
+                {% endif %}
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>{{ contestant.id }}</td>
                 <td>{{ contestant.surname }}</td>
                 <td>{{ contestant.name }}</td>
                 <td>
@@ -57,22 +57,24 @@
                     {% endif %}
                 </td>
                 <td>{{ contestant.school.name }}</td>
-                <td>
-                    <div class="btn-group">
-                        <a href="{{ path('contestant_edit', {'id': contestant.id}) }}" class="btn btn-default" title="{{ 'action.edit'|trans }}">
-                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                            {{ 'action.edit'|trans }}
-                        </a>
-                    </div>
-                </td>
-                <td>
-                    <div class="btn-group">
-                        <a href="{{ path('contestant_delete', {'id': contestant.id}) }}" class="btn btn-default" title="{{ 'action.delete'|trans }}">
-                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                            {{ 'action.delete'|trans }}
-                        </a>
-                    </div>
-                </td>
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    <td>
+                        <div class="btn-group">
+                            <a href="{{ path('contestant_edit', {'id': contestant.id}) }}" class="btn btn-secondary" title="{{ 'action.edit'|trans }}">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                {{ 'action.edit'|trans }}
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <a href="{{ path('contestant_delete', {'id': contestant.id}) }}" class="btn btn-secondary" title="{{ 'action.delete'|trans }}">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                {{ 'action.delete'|trans }}
+                            </a>
+                        </div>
+                    </td>
+                {% endif %}
             </tr>
             </tbody>
         </table>
@@ -82,6 +84,129 @@
         </p>
     {% endif %}
 
+    <h2>{{ 'label.last.scores'|trans }}</h2>
+    {% if scores is defined and scores|length %}
+
+        <h3>{{ 'label.epee'|trans }}</h3>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>{{ 'label.date'|trans }}</th>
+                    <th>{{ 'label.city'|trans }}</th>
+                    <th>{{ 'label.category'|trans }}</th>
+                    <th>{{ 'label.place'|trans }}</th>
+                    <th>{{ 'label.points'|trans }}</th>
+                    <th scope="col">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>{{ 'label.actions'|trans }}
+                    </th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in scores %}
+                    {% if item.category.id == '1' %}
+                        <tr>
+                            <td>{{ item.competition.date|date('Y-m-d') }}</td>
+                            <td>{{ item.competition.city.name }}</td>
+                            <td>{{ item.category.name }}</td>
+                            <td>{{ item.place }}</td>
+                            <td>{{ item.points }}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{{ path('competition_view', {'id': item.competition.id}) }}" class="btn btn-secondary" title="{{ 'action.view'|trans }}">
+                                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                                        {{ 'action.view'|trans }}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+
+        <h3>{{ 'label.sabre'|trans }}</h3>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>{{ 'label.date'|trans }}</th>
+                    <th>{{ 'label.city'|trans }}</th>
+                    <th>{{ 'label.category'|trans }}</th>
+                    <th>{{ 'label.place'|trans }}</th>
+                    <th>{{ 'label.points'|trans }}</th>
+                    <th scope="col">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>{{ 'label.actions'|trans }}
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in scores %}
+                    {% if item.category.id == '2' %}
+                        <tr>
+                            <td>{{ item.competition.date|date('Y-m-d') }}</td>
+                            <td>{{ item.competition.city.name }}</td>
+                            <td>{{ item.category.name }}</td>
+                            <td>{{ item.place }}</td>
+                            <td>{{ item.points }}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{{ path('competition_view', {'id': item.competition.id}) }}" class="btn btn-secondary" title="{{ 'action.view'|trans }}">
+                                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                                        {{ 'action.view'|trans }}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+
+        <h3>{{ 'label.rapier'|trans }}</h3>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>{{ 'label.date'|trans }}</th>
+                    <th>{{ 'label.city'|trans }}</th>
+                    <th>{{ 'label.category'|trans }}</th>
+                    <th>{{ 'label.place'|trans }}</th>
+                    <th>{{ 'label.points'|trans }}</th>
+                    <th scope="col">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>{{ 'label.actions'|trans }}
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in scores %}
+                    {% if item.category.id == '3' %}
+                        <tr>
+                            <td>{{ item.competition.date|date('Y-m-d') }}</td>
+                            <td>{{ item.competition.city.name }}</td>
+                            <td>{{ item.category.name }}</td>
+                            <td>{{ item.place }}</td>
+                            <td>{{ item.points }}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a href="{{ path('competition_view', {'id': item.competition.id}) }}" class="btn btn-secondary" title="{{ 'action.view'|trans }}">
+                                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                                        {{ 'action.view'|trans }}
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+
+
+    {% else %}
+        <div class="alert alert-warning" role="alert">
+            {{ 'message.empty_list'|trans }}
+        </div>
+    {% endif %}
+    <br>
+    <br>
     <div class="btn-group">
         <a href="{{ path('contestant_index') }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
             {{ 'action.index'|trans }}
