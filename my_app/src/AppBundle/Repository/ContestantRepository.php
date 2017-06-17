@@ -93,6 +93,57 @@ class ContestantRepository extends EntityRepository
 
     }
 
+    /**
+     * Gets contestants alphabetically reversed and paginate.
+     *
+     *
+     * @param integer $page Page number
+     *
+     * @return \Doctrine\ORM\Query
+     */
+    public function findAllAphabeticallyReversedPaginated($page = 1)
+    {
+        $qb = $this->createQueryBuilder('b');
+        $qb->select('b')
+            ->orderBy('b.surname', 'DESC');
+
+       // dump($qb->getQuery()->getResult());
+
+        $paginator = new Pagerfanta(new DoctrineORMAdapter($qb, false));
+        $paginator->setMaxPerPage(Contestant::NUM_ITEMS);
+        $paginator->setCurrentPage($page);
+
+        return $paginator;
+
+    }
+
+    /**
+     * Gets contestants by sex alphabetically reversed and paginate.
+     *
+     * @param string $sex Sex
+     *
+     * @param integer $page Page number
+     *
+     * @return \Doctrine\ORM\Query
+     */
+    public function findAllBySexAphabeticallyReversedPaginated($sex, $page = 1)
+    {
+        $qb = $this->createQueryBuilder('b');
+        $qb->select('b')
+            ->where('b.sex = :sex')
+            ->setParameter(':sex', $sex)
+            ->orderBy('b.surname', 'DESC');
+
+       // dump($qb->getQuery()->getResult());
+
+        $paginator = new Pagerfanta(new DoctrineORMAdapter($qb, false));
+        $paginator->setMaxPerPage(Contestant::NUM_ITEMS);
+        $paginator->setCurrentPage($page);
+
+        return $paginator;
+
+    }
+
 
     /**
      * Query all entities.

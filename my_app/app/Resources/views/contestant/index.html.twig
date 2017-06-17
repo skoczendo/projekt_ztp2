@@ -13,6 +13,40 @@
 
 
     <h1>{{ 'title.contestants'|trans }}</h1>
+    {% if sex == 'open' %}
+        <h2>{{ 'title.category.open'|trans }}</h2>
+    {% else %}
+        {% if sex == 'm' %}
+            <h2>{{ 'title.category.men'|trans }}</h2>
+        {% else %}
+            <h2>{{ 'title.category.women'|trans }}</h2>
+        {% endif %}
+    {% endif %}
+
+    <div class="btn-group">
+        {% if sex == 'open' %}
+            <a href="{{ path('contestant_index') }}" class="btn btn-secondary" title="{{ 'action.A-Z'|trans }}">
+                {{ 'label.A-Z'|trans }}
+            </a>
+        {% else %}
+            <a href="{{ path('contestant_index_sex', {'sex': sex}) }}" class="btn btn-secondary" title="{{ 'action.A-Z'|trans }}">
+                {{ 'label.A-Z'|trans }}
+            </a>
+        {% endif %}
+    </div>
+
+    <div class="btn-group">
+        {% if sex == 'open' %}
+            <a href="{{ path('contestant_index_alpha_reversed') }}" class="btn btn-secondary" title="{{ 'action.Z-A'|trans }}">
+                {{ 'label.Z-A'|trans }}
+            </a>
+        {% else %}
+            <a href="{{ path('contestant_index_by_sex_alpha_reversed', {'sex': sex}) }}" class="btn btn-secondary" title="{{ 'action.A-Z'|trans }}">
+                {{ 'label.Z-A'|trans }}
+            </a>
+        {% endif %}
+    </div>
+
     {% if contestants is defined and contestants|length %}
         <table class="table table-striped">
             <thead>

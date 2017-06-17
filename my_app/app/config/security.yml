@@ -30,11 +30,12 @@ security:
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/school/$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/school/view, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/user/, role: ROLE_USER }
         - { path: ^/profile/, role: ROLE_USER }
         - { path: ^/city/, role: ROLE_USER }
-        - { path: ^/school/, role: ROLE_USER }
         - { path: ^/register, role: ROLE_USER }
         - { path: ^/register, role: ROLE_USER }
         - { path: ^/competition/\d+/edit, role: ROLE_USER }
@@ -43,3 +44,6 @@ security:
         - { path: ^/contestant/\d+/edit, role: ROLE_USER }
         - { path: ^/contestant/\d+/delete, role: ROLE_USER }
         - { path: ^/contestant/add, role: ROLE_USER }
+        - { path: ^/school/\d+/edit, role: ROLE_USER }
+        - { path: ^/school/\d+/delete, role: ROLE_USER }
+        - { path: ^/school/add, role: ROLE_USER }

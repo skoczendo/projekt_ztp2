@@ -47,7 +47,10 @@ class ContestantController extends Controller
 
         return $this->render(
             'contestant/index.html.twig',
-            ['contestants' => $contestants]
+            [
+                'contestants' => $contestants,
+                'sex' => 'open'
+            ]
         );
     }
 
@@ -78,10 +81,77 @@ class ContestantController extends Controller
 
         return $this->render(
             'contestant/index.html.twig',
-            ['contestants' => $contestants]
+            [
+                'contestants' => $contestants,
+                'sex' => $sex
+            ]
         );
     }
 
+
+    /**
+     * Index alphabetically-reversed action.
+     *
+     * @param integer $page Current page number
+     *
+     * @return \Symfony\Component\HttpFoundation\Response HTTP Response
+     *
+     * @Route(
+     *     "/alphaReversed/",
+     *     defaults={"page": 1},
+     *     name="contestant_index_alpha_reversed",
+     * )
+     * @Route(
+     *     "/alphaReversed/page/{page}",
+     *     requirements={"page": "[1-9]\d*"},
+     *     name="contestant_index_alpha_reversed_paginated",
+     * )
+     * @Method("GET")
+     */
+    public function indexOpenAlphabeticallyReversedAction($page)
+    {
+        $contestants = $this->get('app.repository.contestant')->findAllAphabeticallyReversedPaginated($page);
+
+        return $this->render(
+            'contestant/index.html.twig',
+            [
+                'contestants' => $contestants,
+                'sex' => 'open'
+            ]
+        );
+    }
+
+    /**
+     * Index by sex alphabetically-reversed action.
+     *
+     * @param integer $page Current page number
+     *
+     * @return \Symfony\Component\HttpFoundation\Response HTTP Response
+     *
+     * @Route(
+     *     "/sex/{sex}/alphaReversed/",
+     *     defaults={"page": 1},
+     *     name="contestant_index_by_sex_alpha_reversed",
+     * )
+     * @Route(
+     *     "/sex/{sex}/alphaReversed/page/{page}",
+     *     requirements={"page": "[1-9]\d*"},
+     *     name="contestant_index_by_sex_alpha_reversed_paginated",
+     * )
+     * @Method("GET")
+     */
+    public function indexBySexAlphabeticallyReversedAction($sex, $page)
+    {
+        $contestants = $this->get('app.repository.contestant')->findAllBySexAphabeticallyReversedPaginated($sex, $page);
+
+        return $this->render(
+            'contestant/index.html.twig',
+            [
+                'contestants' => $contestants,
+                'sex' => $sex
+            ]
+        );
+    }
 
 
     /**

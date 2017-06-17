@@ -72,20 +72,14 @@ class SchoolController extends Controller
         } else {
 
             $contestants = $this->get('app.repository.contestant')->findBySchool($id);
-            if (!$contestants) {
-                throw $this->createNotFoundException(
-                    'No $contestant found for id '.$id
-                );
-            } else {
-                return $this->render(
-                    'school/view.html.twig',
-                    [
-                        'school' => $school,
-                        'contestants' => $contestants,
-                        'id' => $id
-                    ]
-                );
-            }
+            return $this->render(
+                'school/view.html.twig',
+                [
+                    'school' => $school,
+                    'contestants' => $contestants,
+                    'id' => $id
+                ]
+            );
 
         }
     }

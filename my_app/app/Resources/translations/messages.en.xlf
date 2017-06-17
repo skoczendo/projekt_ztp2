@@ -14,6 +14,10 @@
 
 
 
+            <trans-unit id="action.A-Z">
+                <source>action.A-Z</source>
+                <target>A-Z</target>
+            </trans-unit>
 
             <trans-unit id="action.add">
                 <source>action.add</source>
@@ -60,9 +64,19 @@
                 <target>zobacz</target>
             </trans-unit>
 
+            <trans-unit id="action.Z-A">
+                <source>action.Z-A</source>
+                <target>Z-A</target>
+            </trans-unit>
 
 
-            <trans-unit id="label.actions">
+
+            <trans-unit id="label.A-Z">
+                <source>label.A-Z</source>
+                <target>A-Z</target>
+            </trans-unit>
+
+             <trans-unit id="label.actions">
                 <source>label.actions</source>
                 <target>operacje</target>
             </trans-unit>
@@ -242,6 +256,11 @@
                 <target>moje konto</target>
             </trans-unit>
 
+            <trans-unit id="label.Z-A">
+                <source>label.Z-A</source>
+                <target>Z-A</target>
+            </trans-unit>
+
 
             <trans-unit id="message.created_successfully ">
                 <source>message.created_successfully </source>
@@ -278,6 +297,21 @@
             <trans-unit id="title.category.delete">
                 <source>title.category.delete</source>
                 <target>Usuń kategorię</target>
+            </trans-unit>
+
+            <trans-unit id="title.category.men">
+                <source>title.category.men</source>
+                <target>Mężczyźni</target>
+            </trans-unit>
+
+            <trans-unit id="title.category.open">
+                <source>title.category.open</source>
+                <target>Kategoria open</target>
+            </trans-unit>
+
+            <trans-unit id="title.category.women">
+                <source>title.category.women</source>
+                <target>Kobiety</target>
             </trans-unit>
 
             <trans-unit id="title.cities">
