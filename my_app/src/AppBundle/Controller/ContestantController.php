@@ -7,6 +7,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Contestant;
 use AppBundle\Form\ContestantType;
+use AppBundle\Form\SearchType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -41,10 +42,10 @@ class ContestantController extends Controller
      * )
      * @Method("GET")
      */
-    public function indexAction($page)
+    public function indexAction(Request $request, $page)
     {
         $contestants = $this->get('app.repository.contestant')->findAllPaginated($page);
-
+        
         return $this->render(
             'contestant/index.html.twig',
             [
@@ -173,7 +174,6 @@ class ContestantController extends Controller
             );
         } else {
             $scores = $this->get('app.repository.score')->findByContestant($id);
-            dump($scores);
             return $this->render(
                 'contestant/view.html.twig',
                 [
@@ -184,6 +184,7 @@ class ContestantController extends Controller
             );
         }
     }
+
 
     /**
      * Add action.

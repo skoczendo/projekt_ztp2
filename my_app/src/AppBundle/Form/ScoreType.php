@@ -102,15 +102,11 @@ class ScoreType extends AbstractType
                 $data = $event->getData();
                 $normData = $form->getNormData();
 
-                dump($normData);
-                dump($data);
-
                 if ($normData->getId()) {
                     $data['category'] = $normData->getCategory()->getId();
                 }
                 $data['competition'] = $normData->getCompetition()->getId();
                 $event->setData($data);
-                dump($data);
 
             }
         );

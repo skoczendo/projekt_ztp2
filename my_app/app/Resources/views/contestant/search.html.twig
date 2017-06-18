@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.contestants'|trans }}
+{% endblock %}
+
+{% block body %}
+
+
+    <div>
+        {% include 'default/_flash_messages.html.twig' %}
+    </div>
+
+
+    {% include 'default/_form.html.twig' with {
+    attr: {
+    method: 'post',
+    action: url('contestant_search')
+    },
+    submit_label: 'search'
+    } %}
+
+
+{% endblock %}
+
+

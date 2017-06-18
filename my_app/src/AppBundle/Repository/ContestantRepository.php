@@ -83,8 +83,6 @@ class ContestantRepository extends EntityRepository
             ->where('b.sex = :sex')
             ->setParameter(':sex', $sex);
 
-       // dump($qb->getQuery()->getResult());
-
         $paginator = new Pagerfanta(new DoctrineORMAdapter($qb, false));
         $paginator->setMaxPerPage(Contestant::NUM_ITEMS);
         $paginator->setCurrentPage($page);
@@ -106,8 +104,6 @@ class ContestantRepository extends EntityRepository
         $qb = $this->createQueryBuilder('b');
         $qb->select('b')
             ->orderBy('b.surname', 'DESC');
-
-       // dump($qb->getQuery()->getResult());
 
         $paginator = new Pagerfanta(new DoctrineORMAdapter($qb, false));
         $paginator->setMaxPerPage(Contestant::NUM_ITEMS);
@@ -134,8 +130,6 @@ class ContestantRepository extends EntityRepository
             ->setParameter(':sex', $sex)
             ->orderBy('b.surname', 'DESC');
 
-       // dump($qb->getQuery()->getResult());
-
         $paginator = new Pagerfanta(new DoctrineORMAdapter($qb, false));
         $paginator->setMaxPerPage(Contestant::NUM_ITEMS);
         $paginator->setCurrentPage($page);
@@ -144,21 +138,6 @@ class ContestantRepository extends EntityRepository
 
     }
 
-
-    /**
-     * Query all entities.
-     *
-     * @return \Doctrine\ORM\Query
-     */
-    /*
-    protected function queryAll()
-    {
-        return $this->_em->createQuery('
-            SELECT contestant
-            FROM AppBundle:Contestant contestant
-        ');
-    }
-    */
 
 
 }

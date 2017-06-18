@@ -49,7 +49,6 @@ class ScoreController extends Controller
         } else {
             $score = new Score();
             $score->setCompetition($competition);
-            dump($score);
             $form = $this->createForm(ScoreType::class, $score);
             $form->handleRequest($request);
 
@@ -97,7 +96,6 @@ class ScoreController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('app.repository.score')->save($score);
             $this->addFlash('success', 'message.created_successfully');
-            //dump($competition_id);
             return $this->redirectToRoute('competition_view',
                 array(
                     'id' => $competition_id,

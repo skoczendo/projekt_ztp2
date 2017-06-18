@@ -1,0 +1,451 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="epee">
+                <source>epee</source>
+                <target>szpada</target>
+            </trans-unit>
+
+            <trans-unit id="sabre">
+                <source>sabre</source>
+                <target>szabla</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="action.A-Z">
+                <source>action.A-Z</source>
+                <target>A-Z</target>
+            </trans-unit>
+
+            <trans-unit id="action.add">
+                <source>action.add</source>
+                <target>dodaj nowy</target>
+            </trans-unit>
+
+            <trans-unit id="action.add.score">
+                <source>action.add.score</source>
+                <target>dodaj nowy wynik</target>
+            </trans-unit>
+
+            <trans-unit id="action.change.password">
+                <source>action.change.password</source>
+                <target>zmień hasło</target>
+            </trans-unit>
+
+             <trans-unit id="action.delete">
+                <source>action.delete</source>
+                <target>usuń</target>
+            </trans-unit>
+
+            <trans-unit id="action.edit">
+                <source>action.edit</source>
+                <target>edytuj</target>
+            </trans-unit>
+
+            <trans-unit id="action.forgot.password">
+                <source>action.forgot.password</source>
+                <target>zapomniałem hasła</target>
+            </trans-unit>
+
+            <trans-unit id="action.index">
+                <source>action.index</source>
+                <target>powrót do listy</target>
+            </trans-unit>
+
+            <trans-unit id="action.save">
+                <source>action.save</source>
+                <target>zapisz</target>
+            </trans-unit>
+
+            <trans-unit id="action.view">
+                <source>action.view</source>
+                <target>zobacz</target>
+            </trans-unit>
+
+            <trans-unit id="action.Z-A">
+                <source>action.Z-A</source>
+                <target>Z-A</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="label.A-Z">
+                <source>label.A-Z</source>
+                <target>A-Z</target>
+            </trans-unit>
+
+             <trans-unit id="label.actions">
+                <source>label.actions</source>
+                <target>operacje</target>
+            </trans-unit>
+
+            <trans-unit id="label.admins">
+                <source>label.admins</source>
+                <target>administratorzy</target>
+            </trans-unit>
+
+            <trans-unit id="label.categories">
+                <source>label.categories</source>
+                <target>kategorie</target>
+            </trans-unit>
+
+            <trans-unit id="label.category">
+                <source>label.category</source>
+                <target>kategoria</target>
+            </trans-unit>
+
+            <trans-unit id="label.cities">
+                <source>label.cities</source>
+                <target>miasta</target>
+            </trans-unit>
+
+            <trans-unit id="label.city">
+                <source>label.city</source>
+                <target>miasto</target>
+            </trans-unit>
+
+            <trans-unit id="label.competitions">
+                <source>label.competitions</source>
+                <target>zawody</target>
+            </trans-unit>
+
+            <trans-unit id="label.competition">
+                <source>label.competition</source>
+                <target>data zawodów</target>
+            </trans-unit>
+
+            <trans-unit id="label.contestants">
+                <source>label.contestants</source>
+                <target>zawodnicy</target>
+            </trans-unit>
+
+            <trans-unit id="label.contestant">
+                <source>label.contestant</source>
+                <target>zawodnik</target>
+            </trans-unit>
+
+            <trans-unit id="label.contestant.men.index">
+                <source>label.contestant.men.index</source>
+                <target>mężczyźni</target>
+            </trans-unit>
+
+            <trans-unit id="label.contestant.open.index">
+                <source>label.contestant.open.index</source>
+                <target>kategoria open</target>
+            </trans-unit>
+
+            <trans-unit id="label.contestant.name">
+                <source>label.contestant.name</source>
+                <target>imię</target>
+            </trans-unit>
+
+            <trans-unit id="label.contestant.surname">
+                <source>label.contestant.surname</source>
+                <target>nazwisko</target>
+            </trans-unit>
+
+            <trans-unit id="label.contestant.women.index">
+                <source>label.contestant.women.index</source>
+                <target>kobiety</target>
+            </trans-unit>
+
+            <trans-unit id="label.date">
+                <source>label.date</source>
+                <target>data</target>
+            </trans-unit>
+
+            <trans-unit id="label.date_of_birth">
+                <source>label.date_of_birth</source>
+                <target>data urodzenia</target>
+            </trans-unit>
+
+            <trans-unit id="label.epee">
+                <source>label.epee</source>
+                <target>szpada</target>
+            </trans-unit>
+
+            <trans-unit id="label.female">
+                <source>label.female</source>
+                <target>kobieta</target>
+            </trans-unit>
+
+            <trans-unit id="label.home">
+                <source>label.home</source>
+                <target>strona główna</target>
+            </trans-unit>
+
+            <trans-unit id="label.id">
+                <source>label.id</source>
+                <target>id</target>
+            </trans-unit>
+
+            <trans-unit id="label.login">
+                <source>label.login</source>
+                <target>zaloguj się</target>
+            </trans-unit>
+
+            <trans-unit id="label.male">
+                <source>label.male</source>
+                <target>mężczyzna</target>
+            </trans-unit>
+
+            <trans-unit id="label.name">
+                <source>label.name</source>
+                <target>imię</target>
+            </trans-unit>
+
+            <trans-unit id="label.no">
+                <source>label.no</source>
+                <target>nie</target>
+            </trans-unit>
+
+            <trans-unit id="label.place">
+                <source>label.place</source>
+                <target>miejsce</target>
+            </trans-unit>
+
+            <trans-unit id="label.points">
+                <source>label.points</source>
+                <target>punkty</target>
+            </trans-unit>
+
+            <trans-unit id="label.rapier">
+                <source>label.rapier</source>
+                <target>rapier</target>
+            </trans-unit>
+
+            <trans-unit id="label.sabre">
+                <source>label.sabre</source>
+                <target>szabla</target>
+            </trans-unit>
+
+            <trans-unit id="label.school">
+                <source>label.school</source>
+                <target>szkoła</target>
+            </trans-unit>
+
+            <trans-unit id="label.schools">
+                <source>label.schools</source>
+                <target>szkoły</target>
+            </trans-unit>
+
+            <trans-unit id="label.scores">
+                <source>label.scores</source>
+                <target>Wyniki:</target>
+            </trans-unit>
+
+            <trans-unit id="label.sex">
+                <source>label.sex</source>
+                <target>płeć</target>
+            </trans-unit>
+
+            <trans-unit id="label.surname">
+                <source>label.surname</source>
+                <target>nazwisko</target>
+            </trans-unit>
+
+            <trans-unit id="label.yes">
+                <source>label.yes</source>
+                <target>tak</target>
+            </trans-unit>
+
+            <trans-unit id="label.your.account">
+                <source>label.your.account</source>
+                <target>moje konto</target>
+            </trans-unit>
+
+            <trans-unit id="label.Z-A">
+                <source>label.Z-A</source>
+                <target>Z-A</target>
+            </trans-unit>
+
+
+            <trans-unit id="message.created_successfully ">
+                <source>message.created_successfully </source>
+                <target>Rekord został utworzony pomyślnie!</target>
+            </trans-unit>
+
+            <trans-unit id="message.empty_list">
+                <source>message.empty_list</source>
+                <target>Lista rekordów jest pusta!</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="title.categories">
+                <source>title.categories</source>
+                <target>Lista kategorii</target>
+            </trans-unit>
+
+            <trans-unit id="title.category">
+                <source>title.category</source>
+                <target>Kategoria</target>
+            </trans-unit>
+
+            <trans-unit id="title.category.add">
+                <source>title.category.add</source>
+                <target>Dodaj kategorię</target>
+            </trans-unit>
+
+            <trans-unit id="title.category.edit">
+                <source>title.category.edit</source>
+                <target>Edytuj kategorię</target>
+            </trans-unit>
+
+            <trans-unit id="title.category.delete">
+                <source>title.category.delete</source>
+                <target>Usuń kategorię</target>
+            </trans-unit>
+
+            <trans-unit id="title.category.men">
+                <source>title.category.men</source>
+                <target>Mężczyźni</target>
+            </trans-unit>
+
+            <trans-unit id="title.category.open">
+                <source>title.category.open</source>
+                <target>Kategoria open</target>
+            </trans-unit>
+
+            <trans-unit id="title.category.women">
+                <source>title.category.women</source>
+                <target>Kobiety</target>
+            </trans-unit>
+
+            <trans-unit id="title.cities">
+                <source>title.cities</source>
+                <target>Miasta</target>
+            </trans-unit>
+
+            <trans-unit id="title.city">
+                <source>title.city</source>
+                <target>Miasto</target>
+            </trans-unit>
+
+            <trans-unit id="title.city.add">
+                <source>title.city.add</source>
+                <target>Dodaj miasto</target>
+            </trans-unit>
+
+            <trans-unit id="title.city.edit">
+                <source>title.city.edit</source>
+                <target>Edytuj miasto</target>
+            </trans-unit>
+
+            <trans-unit id="title.city.delete">
+                <source>title.city.delete</source>
+                <target>Usuń miasto</target>
+            </trans-unit>
+
+            <trans-unit id="title.contestant">
+                <source>title.contestant</source>
+                <target>Profil zawodnika</target>
+            </trans-unit>
+
+            <trans-unit id="title.competitions">
+                <source>title.competitions</source>
+                <target>Lista zawodów</target>
+            </trans-unit>
+
+            <trans-unit id="title.competition">
+                <source>title.competition</source>
+                <target>Zawody</target>
+            </trans-unit>
+
+            <trans-unit id="title.competition.add">
+                <source>title.competition.add</source>
+                <target>Dodaj zawody</target>
+            </trans-unit>
+
+            <trans-unit id="title.competition.edit">
+                <source>title.competition.edit</source>
+                <target>Edytuj zawody</target>
+            </trans-unit>
+
+            <trans-unit id="title.competition.delete">
+                <source>title.competition.delete</source>
+                <target>Usuń zawody</target>
+            </trans-unit>
+
+            <trans-unit id="title.contestant.add">
+                <source>title.contestant.add</source>
+                <target>Dodaj zawodnika</target>
+            </trans-unit>
+
+            <trans-unit id="title.contestant.edit">
+                <source>title.contestant.edit</source>
+                <target>Edytuj zawodnika</target>
+            </trans-unit>
+
+            <trans-unit id="title.contestant.delete">
+                <source>title.contestant.delete</source>
+                <target>Usuń zawodnika</target>
+            </trans-unit>
+
+            <trans-unit id="title.contestants">
+                <source>title.contestants</source>
+                <target>Lista zawodników</target>
+            </trans-unit>
+
+            <trans-unit id="title.enrolled.list">
+                <source>title.enrolled.list</source>
+                <target>Lista zawodników z tej szkoły</target>
+            </trans-unit>
+
+            <trans-unit id="title.home">
+                <source>title.home</source>
+                <target>Strona główna</target>
+            </trans-unit>
+
+            <trans-unit id="title.school">
+                <source>title.school</source>
+                <target>Szkoła</target>
+            </trans-unit>
+
+            <trans-unit id="title.school.delete">
+                <source>title.school.delete</source>
+                <target>Usuń szkołę</target>
+            </trans-unit>
+
+            <trans-unit id="title.school.edit">
+                <source>title.school.edit</source>
+                <target>Edytuj szkołę</target>
+            </trans-unit>
+
+            <trans-unit id="title.schools">
+                <source>title.schools</source>
+                <target>Lista szkół</target>
+            </trans-unit>
+
+            <trans-unit id="title.score.add">
+                <source>title.score.add</source>
+                <target>Dodaj wynik</target>
+            </trans-unit>
+
+            <trans-unit id="title.score.edit">
+                <source>title.score.edit</source>
+                <target>Edytuj wynik</target>
+            </trans-unit>
+
+            <trans-unit id="title.score.delete">
+                <source>title.score.delete</source>
+                <target>Usuń wynik</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="question.competition">
+                <source>question.competition</source>
+                <target>Te zawody mogą zawierać listę wyników!</target>
+            </trans-unit>
+            <trans-unit id="question.confirmation">
+                <source>question.confirmation</source>
+                <target>Jesteś pewien, że chcesz usunąć ten rekord?</target>
+            </trans-unit>
+
+
+        </body>
+    </file>
+</xliff>

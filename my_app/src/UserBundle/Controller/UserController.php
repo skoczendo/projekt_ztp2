@@ -36,7 +36,6 @@ class UserController extends Controller
     {
         $userManager = $this->get('fos_user.user_manager');
         $users = $userManager->findUsers();
-        dump($users);
 
         return $this->render(
             'user/index.html.twig',
