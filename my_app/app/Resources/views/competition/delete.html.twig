@@ -14,14 +14,12 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>{{ 'label.id'|trans }}</th>
                 <th>{{ 'label.date'|trans }}</th>
                 <th>{{ 'label.city'|trans }}</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>{{ competition.id }}</td>
                 <td>{{ competition.date|date('Y-m-d') }}</td>
                 <td>{{ competition.city.name }}</td>
             </tr>
@@ -33,9 +31,7 @@
         </p>
     {% endif %}
 
-    <h2>
-        {{ 'question.competition'|trans }}
-    </h2>
+
     <h2>
         {{ 'question.confirmation'|trans }}
     </h2>
@@ -45,7 +41,7 @@
     method: 'post',
     action: url('competition_delete', {'id': competition.id})
     },
-    submit_label: 'delete'
+    submit_label: 'usuń'
     } %}
 
     <br>

@@ -12,6 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\Valid;
 
 /**
  * Class CompetitionController.
@@ -70,21 +71,15 @@ class CompetitionController extends Controller
             );
         } else {
             $scores = $this->get('app.repository.score')->findByCompetition($id);
-            if (!$scores) {
-                throw $this->createNotFoundException(
-                    'No scores found for id '.$id
-                );
-            } else {
-                return $this->render(
-                    'competition/view.html.twig',
-                    [
-                        'competition' => $competition,
-                        'scores' => $scores,
-                        'id' => $id
-                    ]
-                );
-            }
-        }
+            return $this->render(
+                'competition/view.html.twig',
+                [
+                    'competition' => $competition,
+                    'scores' => $scores,
+                    'id' => $id
+                ]
+            );
+    }
     }
 
     /**
@@ -171,6 +166,17 @@ class CompetitionController extends Controller
      * @Method({"GET", "POST"})
      */
     public function deleteAction(Request $request,Competition $competition){
+        $errors = $this->get('validator')->validateValue(
+            $competition,
+            new Valid(),
+            'competitions-delete'
+        );
+
+        if ($errors->count()) {
+            $this->addFlash('warning', 'message.cant_delete');
+            return $this->redirectToRoute('c_index');
+        }
+
         $form = $this->createForm(FormType::class, $competition);
         $form->handleRequest($request);
 

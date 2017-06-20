@@ -81,7 +81,8 @@ class ContestantRepository extends EntityRepository
         $qb = $this->createQueryBuilder('b');
         $qb->select('b')
             ->where('b.sex = :sex')
-            ->setParameter(':sex', $sex);
+            ->setParameter(':sex', $sex)
+            ->orderBy('b.surname', 'ASC');
 
         $paginator = new Pagerfanta(new DoctrineORMAdapter($qb, false));
         $paginator->setMaxPerPage(Contestant::NUM_ITEMS);

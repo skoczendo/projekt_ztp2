@@ -14,7 +14,6 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>{{ 'label.id'|trans }}</th>
                 <th>{{ 'label.surname'|trans }}</th>
                 <th>{{ 'label.name'|trans }}</th>
                 <th>{{ 'label.sex'|trans }}</th>
@@ -27,7 +26,6 @@
             </thead>
             <tbody>
             <tr>
-                <td>{{ contestant.id }}</td>
                 <td>{{ contestant.surname }}</td>
                 <td>{{ contestant.name }}</td>
                 <td>
@@ -78,7 +76,7 @@
     method: 'post',
     action: url('contestant_delete', {'id': contestant.id})
     },
-    submit_label: 'delete'
+    submit_label: 'usuń'
     } %}
 
     <br>

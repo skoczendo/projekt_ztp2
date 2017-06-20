@@ -14,7 +14,6 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>{{ 'label.id'|trans }}</th>
                 <th>{{ 'label.place'|trans }}</th>
                 <th>{{ 'label.points'|trans }}</th>
                 <th>{{ 'label.category'|trans }}</th>
@@ -26,7 +25,6 @@
 
 
             <tr>
-                <td>{{ score.id }}</td>
                 <td>{{ score.place }}</td>
                 <td>{{ score.points }}</td>
                 <td>{{ score.category.name }}</td>
@@ -55,6 +53,8 @@
     submit_label: 'delete'
     } %}
 
+    <br>
+    <br>
     <div class="btn-group">
         <a href="{{ path('competition_view', {'id': competition_id}) }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
             {{ 'action.index'|trans }}

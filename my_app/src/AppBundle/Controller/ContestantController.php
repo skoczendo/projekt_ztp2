@@ -13,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\Valid;
 
 /**
  * Class ContestantController.
@@ -270,6 +271,17 @@ class ContestantController extends Controller
      * @Method({"GET", "POST"})
      */
     public function deleteAction(Request $request,Contestant $contestant){
+        $errors = $this->get('validator')->validateValue(
+            $contestant,
+            new Valid(),
+            'contestants-delete'
+        );
+
+        if ($errors->count()) {
+            $this->addFlash('warning', 'message.cant_delete');
+            return $this->redirectToRoute('contestant_index');
+        }
+
         $form = $this->createForm(FormType::class, $contestant);
         $form->handleRequest($request);
 

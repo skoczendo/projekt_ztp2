@@ -14,13 +14,11 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>{{ 'label.id'|trans }}</th>
-                <th>{{ 'label.name'|trans }}</th>
+                <th>{{ 'label.thing.name'|trans }}</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>{{ city.id }}</td>
                 <td>{{ city.name }}</td>
             </tr>
             </tbody>
@@ -40,7 +38,7 @@
     method: 'post',
     action: url('city_delete', {'id': city.id})
     },
-    submit_label: 'delete'
+    submit_label: 'usuń'
     } %}
 
     <br>

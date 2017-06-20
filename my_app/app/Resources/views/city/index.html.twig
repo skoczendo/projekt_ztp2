@@ -16,8 +16,7 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>{{ 'label.id'|trans }}</th>
-                <th>{{ 'label.name'|trans }}</th>
+                <th>{{ 'label.thing.name'|trans }}</th>
                 <th scope="col">
                     <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> {{ 'label.actions'|trans }}
                 </th>
@@ -26,7 +25,6 @@
             <tbody>
             {% for item in cities %}
                 <tr>
-                    <td>{{ item.id }}</td>
                     <td>{{ item.name }}</td>
                     <td>
                         <div class="btn-group">

@@ -7399,3 +7399,8 @@ input {
     margin: 0px;
     display:block;
 }
+
+.center {
+    margin: auto;
+    width: 65%;
+}

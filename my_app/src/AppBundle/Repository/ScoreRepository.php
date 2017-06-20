@@ -67,4 +67,21 @@ class ScoreRepository extends EntityRepository
         return $qb;
     }
 
+    /**
+     * Gets score by contestant.
+     *
+     * @param string $id Contestant id
+     *
+     * @return \Doctrine\ORM\Query
+     */
+    public function findLastByContestant($id)
+    {
+        $qb = $this->createQueryBuilder('b');
+        $qb->select('b')
+            ->orderBy('b.id', 'DESC');
+
+        return $qb->getQuery()->getResult();
+
+    }
+
 }
