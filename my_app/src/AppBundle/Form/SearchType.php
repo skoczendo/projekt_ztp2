@@ -24,16 +24,16 @@ class SearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add(
-                'surname',
-                TextType::class,
-                [
-                    'label' => 'label.surname',
-                    'required' => true,
-                    'attr' => [
-                        'max_length' => 128,
-                    ],
-                ]
-            );
+            'surname',
+            TextType::class,
+            [
+                'label' => 'label.surname',
+                'required' => true,
+                'attr' => [
+                    'max_length' => 128,
+                ],
+            ]
+        );
     }
 
     /**

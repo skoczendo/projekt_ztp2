@@ -134,10 +134,10 @@ class Contestant
     /**
      * Date of birth.
      *
-     * @var string $date_of_birth
+     * @var string $dateOfBirth
      *
      * @ORM\Column(
-     *     name="date_of_birth",
+     *     name="dateOfBirth",
      *     type="date",
      *     nullable=false,
      * )
@@ -146,7 +146,7 @@ class Contestant
      *     groups={"contestant-default"}
      * )
      */
-    protected $date_of_birth;
+    protected $dateOfBirth;
 
     /**
      * Epee.
@@ -304,7 +304,7 @@ class Contestant
     /**
      * Get sabre
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getSabre()
     {
@@ -327,7 +327,7 @@ class Contestant
     /**
      * Get rapier
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getRapier()
     {
@@ -342,7 +342,7 @@ class Contestant
      */
     public function setDateOfBirth($dateOfBirth)
     {
-        $this->date_of_birth = $dateOfBirth;
+        $this->dateOfBirthirth = $dateOfBirth;
 
         return $this;
     }
@@ -350,11 +350,11 @@ class Contestant
     /**
      * Get date_of_birth
      *
-     * @return string 
+     * @return string
      */
     public function getDateOfBirth()
     {
-        return $this->date_of_birth;
+        return $this->dateOfBirth;
     }
 
     /**
@@ -373,7 +373,7 @@ class Contestant
     /**
      * Get school
      *
-     * @return \AppBundle\Entity\School 
+     * @return \AppBundle\Entity\School
      */
     public function getSchool()
     {
@@ -413,7 +413,7 @@ class Contestant
     /**
      * Get competitions
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getCompetitions()
     {
@@ -446,7 +446,7 @@ class Contestant
     /**
      * Get scores
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getScores()
     {

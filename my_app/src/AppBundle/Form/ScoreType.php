@@ -37,6 +37,7 @@ class ScoreType extends AbstractType
                 'class' => Competition::class,
                 'choice_label' => function ($competition) {
                     $date = $competition->getDate();
+
                     return $date->format('d/m/Y');
                 },
                 'label' => 'label.competition',
@@ -71,6 +72,7 @@ class ScoreType extends AbstractType
                 'choice_label' => function ($contestant) {
                     $surname = $contestant->getSurname();
                     $name = $contestant->getName();
+
                     return $surname.' '.$name;
                 },
                 'label' => 'label.contestant',
@@ -107,7 +109,6 @@ class ScoreType extends AbstractType
                 }
                 $data['competition'] = $normData->getCompetition()->getId();
                 $event->setData($data);
-
             }
         );
     }

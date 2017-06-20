@@ -54,6 +54,8 @@ class CategoryController extends Controller
     /**
      * View action.
      *
+     * @param integer $id Id
+     *
      * @return \Symfony\Component\HttpFoundation\Response Response
      *
      * @Route(
@@ -73,7 +75,7 @@ class CategoryController extends Controller
                 'category/view.html.twig',
                 [
                     'category' => $category,
-                    'id' => $id
+                    'id' => $id,
                 ]
             );
         }
@@ -117,7 +119,8 @@ class CategoryController extends Controller
     /**
      * Edit action.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
+     * @param \Symfony\Component\HttpFoundation\Request $request  HTTP Request
+     * @param Category                                  $category Category
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -128,13 +131,14 @@ class CategoryController extends Controller
      * )
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Category $category){
+    public function editAction(Request $request, Category $category)
+    {
         $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('app.repository.category')->save($category);
-            $this->addFlash('success', 'message.created_successfully');
+            $this->addFlash('success', 'message.edited_successfully');
 
             return $this->redirectToRoute('category_index');
         }
@@ -151,7 +155,8 @@ class CategoryController extends Controller
     /**
      * Delete action.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
+     * @param \Symfony\Component\HttpFoundation\Request $request  HTTP Request
+     * @param Category                                  $category Category
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -162,7 +167,8 @@ class CategoryController extends Controller
      * )
      * @Method({"GET", "POST"})
      */
-    public function deleteAction(Request $request,Category $category){
+    public function deleteAction(Request $request, Category $category)
+    {
         $form = $this->createForm(FormType::class, $category);
         $form->handleRequest($request);
 

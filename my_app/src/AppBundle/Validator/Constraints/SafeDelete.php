@@ -18,6 +18,11 @@ class SafeDelete extends Constraint
 
     public $field;
 
+    /**
+     * Get Targets.
+     *
+     * @return Symfony\Component\Validator\Constraint
+     */
     public function getTargets()
     {
         return self::CLASS_CONSTRAINT;

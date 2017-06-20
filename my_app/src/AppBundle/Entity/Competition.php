@@ -102,7 +102,7 @@ class Competition
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -125,7 +125,7 @@ class Competition
     /**
      * Get date
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -148,7 +148,7 @@ class Competition
     /**
      * Get city
      *
-     * @return \AppBundle\Entity\City 
+     * @return \AppBundle\Entity\City
      */
     public function getCity()
     {
@@ -188,7 +188,7 @@ class Competition
     /**
      * Get contestants
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getContestants()
     {
@@ -221,7 +221,7 @@ class Competition
     /**
      * Get scores
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getScores()
     {

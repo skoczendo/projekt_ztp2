@@ -55,6 +55,8 @@ class CompetitionController extends Controller
     /**
      * View action.
      *
+     * @param integer $id Id
+     *
      * @return \Symfony\Component\HttpFoundation\Response Response
      *
      * @Route(
@@ -71,15 +73,16 @@ class CompetitionController extends Controller
             );
         } else {
             $scores = $this->get('app.repository.score')->findByCompetition($id);
+
             return $this->render(
                 'competition/view.html.twig',
                 [
                     'competition' => $competition,
                     'scores' => $scores,
-                    'id' => $id
+                    'id' => $id,
                 ]
             );
-    }
+        }
     }
 
     /**
@@ -120,7 +123,8 @@ class CompetitionController extends Controller
     /**
      * Edit action.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
+     * @param \Symfony\Component\HttpFoundation\Request $request     HTTP Request
+     * @param Competition                               $competition Competition
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -131,13 +135,14 @@ class CompetitionController extends Controller
      * )
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Competition $competition){
+    public function editAction(Request $request, Competition $competition)
+    {
         $form = $this->createForm(CompetitionType::class, $competition);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('app.repository.competition')->save($competition);
-            $this->addFlash('success', 'message.created_successfully');
+            $this->addFlash('success', 'message.edited_successfully');
 
             return $this->redirectToRoute('competition_index');
         }
@@ -154,7 +159,8 @@ class CompetitionController extends Controller
     /**
      * Delete action.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
+     * @param \Symfony\Component\HttpFoundation\Request $request     HTTP Request
+     * @param Competition                               $competition Competition
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -165,7 +171,8 @@ class CompetitionController extends Controller
      * )
      * @Method({"GET", "POST"})
      */
-    public function deleteAction(Request $request,Competition $competition){
+    public function deleteAction(Request $request, Competition $competition)
+    {
         $errors = $this->get('validator')->validateValue(
             $competition,
             new Valid(),
@@ -174,6 +181,7 @@ class CompetitionController extends Controller
 
         if ($errors->count()) {
             $this->addFlash('warning', 'message.cant_delete');
+
             return $this->redirectToRoute('c_index');
         }
 

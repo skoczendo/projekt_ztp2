@@ -287,9 +287,24 @@
             </trans-unit>
 
 
-            <trans-unit id="message.created_successfully ">
-                <source>message.created_successfully </source>
+            <trans-unit id="message.cant_delete">
+                <source>message.cant_delete</source>
+                <target>Nie mozna usunac tego rekordu, bo jest powiazany z innymi danymi!</target>
+            </trans-unit>
+
+            <trans-unit id="message.created_successfully">
+                <source>message.created_successfully</source>
                 <target>Rekord został utworzony pomyślnie!</target>
+            </trans-unit>
+
+            <trans-unit id="message.delated_successfully">
+                <source>message.delated_successfully</source>
+                <target>Rekord został usuniety pomyślnie!</target>
+            </trans-unit>
+
+            <trans-unit id="message.edited_successfully">
+                <source>message.edited_successfully</source>
+                <target>Dane zostay zmienione!</target>
             </trans-unit>
 
             <trans-unit id="message.empty_list">

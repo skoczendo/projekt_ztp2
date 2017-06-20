@@ -54,24 +54,9 @@ class ContestantRepository extends EntityRepository
     }
 
     /**
-     * Query all entities.
-     *
-     * @return \Doctrine\ORM\Query
-     */
-    protected function queryAll()
-    {
-        $qb = $this->createQueryBuilder('b');
-        $qb->select('b')
-            ->orderBy('b.surname', 'ASC');
-
-        return $qb;
-    }
-
-    /**
      * Gets contestants by sex.
      *
-     * @param string $sex Sex
-     *
+     * @param string  $sex  Sex
      * @param integer $page Page number
      *
      * @return \Doctrine\ORM\Query
@@ -89,7 +74,6 @@ class ContestantRepository extends EntityRepository
         $paginator->setCurrentPage($page);
 
         return $paginator;
-
     }
 
     /**
@@ -111,14 +95,12 @@ class ContestantRepository extends EntityRepository
         $paginator->setCurrentPage($page);
 
         return $paginator;
-
     }
 
     /**
      * Gets contestants by sex alphabetically reversed and paginate.
      *
-     * @param string $sex Sex
-     *
+     * @param string  $sex  Sex
      * @param integer $page Page number
      *
      * @return \Doctrine\ORM\Query
@@ -136,9 +118,19 @@ class ContestantRepository extends EntityRepository
         $paginator->setCurrentPage($page);
 
         return $paginator;
-
     }
 
+    /**
+     * Query all entities.
+     *
+     * @return \Doctrine\ORM\Query
+     */
+    protected function queryAll()
+    {
+        $qb = $this->createQueryBuilder('b');
+        $qb->select('b')
+            ->orderBy('b.surname', 'ASC');
 
-
+        return $qb;
+    }
 }

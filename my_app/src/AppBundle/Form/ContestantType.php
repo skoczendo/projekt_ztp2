@@ -73,7 +73,6 @@ class ContestantType extends AbstractType
                 },
                 'label' => 'label.school',
                 'required' => false,
-                
                 'multiple' => false,
             ]
         )

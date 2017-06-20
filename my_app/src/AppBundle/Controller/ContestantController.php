@@ -27,7 +27,8 @@ class ContestantController extends Controller
     /**
      * Index action.
      *
-     * @param integer $page Current page number
+     * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
+     * @param integer                                   $page    Current page number
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -46,12 +47,12 @@ class ContestantController extends Controller
     public function indexAction(Request $request, $page)
     {
         $contestants = $this->get('app.repository.contestant')->findAllPaginated($page);
-        
+
         return $this->render(
             'contestant/index.html.twig',
             [
                 'contestants' => $contestants,
-                'sex' => 'open'
+                'sex' => 'open',
             ]
         );
     }
@@ -60,8 +61,7 @@ class ContestantController extends Controller
      * Index by sex action.
      *
      * @param integer $page Current page number
-     *
-     * @param string $sex Sex
+     * @param string  $sex  Sex
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -85,7 +85,7 @@ class ContestantController extends Controller
             'contestant/index.html.twig',
             [
                 'contestants' => $contestants,
-                'sex' => $sex
+                'sex' => $sex,
             ]
         );
     }
@@ -118,7 +118,7 @@ class ContestantController extends Controller
             'contestant/index.html.twig',
             [
                 'contestants' => $contestants,
-                'sex' => 'open'
+                'sex' => 'open',
             ]
         );
     }
@@ -126,6 +126,7 @@ class ContestantController extends Controller
     /**
      * Index by sex alphabetically-reversed action.
      *
+     * @param string  $sex  Sex
      * @param integer $page Current page number
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP Response
@@ -150,7 +151,7 @@ class ContestantController extends Controller
             'contestant/index.html.twig',
             [
                 'contestants' => $contestants,
-                'sex' => $sex
+                'sex' => $sex,
             ]
         );
     }
@@ -160,6 +161,7 @@ class ContestantController extends Controller
      * View action.
      *
      * @return \Symfony\Component\HttpFoundation\Response Response
+     * @param integer $id Id
      *
      * @Route(
      *     "/view/{id}",
@@ -175,12 +177,13 @@ class ContestantController extends Controller
             );
         } else {
             $scores = $this->get('app.repository.score')->findByContestant($id);
+
             return $this->render(
                 'contestant/view.html.twig',
                 [
                     'contestant' => $contestant,
                     'scores' => $scores,
-                    'id' => $id
+                    'id' => $id,
                 ]
             );
         }
@@ -225,7 +228,8 @@ class ContestantController extends Controller
     /**
      * Edit action.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
+     * @param \Symfony\Component\HttpFoundation\Request $request    HTTP Request
+     * @param Contestant                                $contestant Contestant
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -236,13 +240,14 @@ class ContestantController extends Controller
      * )
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Contestant $contestant){
+    public function editAction(Request $request, Contestant $contestant)
+    {
         $form = $this->createForm(ContestantType::class, $contestant);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('app.repository.contestant')->save($contestant);
-            $this->addFlash('success', 'message.created_successfully');
+            $this->addFlash('success', 'message.edited_successfully');
 
             return $this->redirectToRoute('contestant_index');
         }
@@ -259,7 +264,8 @@ class ContestantController extends Controller
     /**
      * Delete action.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
+     * @param \Symfony\Component\HttpFoundation\Request $request    HTTP Request
+     * @param Contestant                                $contestant Contestant
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -270,7 +276,8 @@ class ContestantController extends Controller
      * )
      * @Method({"GET", "POST"})
      */
-    public function deleteAction(Request $request,Contestant $contestant){
+    public function deleteAction(Request $request, Contestant $contestant)
+    {
         $errors = $this->get('validator')->validateValue(
             $contestant,
             new Valid(),
@@ -279,6 +286,7 @@ class ContestantController extends Controller
 
         if ($errors->count()) {
             $this->addFlash('warning', 'message.cant_delete');
+
             return $this->redirectToRoute('contestant_index');
         }
 
@@ -300,5 +308,4 @@ class ContestantController extends Controller
             ]
         );
     }
-
 }

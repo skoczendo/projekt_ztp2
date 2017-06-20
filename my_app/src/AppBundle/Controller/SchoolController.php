@@ -55,6 +55,8 @@ class SchoolController extends Controller
     /**
      * View action.
      *
+     * @param integer $id Id
+     *
      * @return \Symfony\Component\HttpFoundation\Response Response
      *
      * @Route(
@@ -70,17 +72,16 @@ class SchoolController extends Controller
                 'No school found for id '.$id
             );
         } else {
-
             $contestants = $this->get('app.repository.contestant')->findBySchool($id);
+
             return $this->render(
                 'school/view.html.twig',
                 [
                     'school' => $school,
                     'contestants' => $contestants,
-                    'id' => $id
+                    'id' => $id,
                 ]
             );
-
         }
     }
 
@@ -123,6 +124,7 @@ class SchoolController extends Controller
      * Edit action.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
+     * @param School                                    $school  School
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -133,13 +135,14 @@ class SchoolController extends Controller
      * )
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, School $school){
+    public function editAction(Request $request, School $school)
+    {
         $form = $this->createForm(SchoolType::class, $school);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('app.repository.school')->save($school);
-            $this->addFlash('success', 'message.created_successfully');
+            $this->addFlash('success', 'message.edited_successfully');
 
             return $this->redirectToRoute('school_index');
         }
@@ -157,6 +160,7 @@ class SchoolController extends Controller
      * Delete action.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
+     * @param School                                    $school  School
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -167,8 +171,8 @@ class SchoolController extends Controller
      * )
      * @Method({"GET", "POST"})
      */
-    public function deleteAction(Request $request,School $school){
-
+    public function deleteAction(Request $request, School $school)
+    {
         $errors = $this->get('validator')->validateValue(
             $school,
             new Valid(),
@@ -177,6 +181,7 @@ class SchoolController extends Controller
 
         if ($errors->count()) {
             $this->addFlash('warning', 'message.cant_delete');
+
             return $this->redirectToRoute('school_index');
         }
 
@@ -198,5 +203,4 @@ class SchoolController extends Controller
             ]
         );
     }
-
 }

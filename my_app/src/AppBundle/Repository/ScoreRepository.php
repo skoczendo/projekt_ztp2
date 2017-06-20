@@ -54,20 +54,6 @@ class ScoreRepository extends EntityRepository
     }
 
     /**
-     * Query all entities.
-     *
-     * @return \Doctrine\ORM\Query
-     */
-    protected function queryAll()
-    {
-        $qb = $this->createQueryBuilder('b');
-        $qb->select('b')
-            ->orderBy('b.id', 'DESC');
-
-        return $qb;
-    }
-
-    /**
      * Gets score by contestant.
      *
      * @param string $id Contestant id
@@ -81,7 +67,19 @@ class ScoreRepository extends EntityRepository
             ->orderBy('b.id', 'DESC');
 
         return $qb->getQuery()->getResult();
-
     }
 
+    /**
+     * Query all entities.
+     *
+     * @return \Doctrine\ORM\Query
+     */
+    protected function queryAll()
+    {
+        $qb = $this->createQueryBuilder('b');
+        $qb->select('b')
+            ->orderBy('b.id', 'DESC');
+
+        return $qb;
+    }
 }

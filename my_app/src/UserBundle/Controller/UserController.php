@@ -46,7 +46,8 @@ class UserController extends Controller
     /**
      * Delete action.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
+     * @param \Symfony\Component\HttpFoundation\Request $request  HTTP Request
+     * @param string                                    $username Username
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -56,17 +57,19 @@ class UserController extends Controller
      * )
      * @Method({"GET", "POST"})
      */
-    public function deleteAction(Request $request, $username) {
+    public function deleteAction(Request $request, $username)
+    {
         $userManager = $this->get('fos_user.user_manager');
 
         $user = $userManager->findUserByUsername($username);
         $users = $userManager->findUsers();
-        if(!$user) {
+        if (!$user) {
             throw $this->createNotFoundException(
                 'No user found for username '.$username
             );
         } else {
-            if (count($users) > 1){
+            if (count($users) > 1)
+            {
                 $form = $this->createForm(FormType::class, $user);
                 $form->handleRequest($request);
 
@@ -86,6 +89,7 @@ class UserController extends Controller
                 );
             } else {
                 $this->addFlash('warning', 'message.cant_delete');
+
                 return $this->redirectToRoute('user_index');
             }
         }

@@ -55,6 +55,8 @@ class CityController extends Controller
     /**
      * View action.
      *
+     * @param integer $id Id
+     *
      * @return \Symfony\Component\HttpFoundation\Response Response
      *
      * @Route(
@@ -74,7 +76,7 @@ class CityController extends Controller
                 'city/view.html.twig',
                 [
                     'city' => $city,
-                    'id' => $id
+                    'id' => $id,
                 ]
             );
         }
@@ -119,6 +121,7 @@ class CityController extends Controller
      * Edit action.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
+     * @param City                                      $city    City
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -129,13 +132,14 @@ class CityController extends Controller
      * )
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, City $city){
+    public function editAction(Request $request, City $city)
+    {
         $form = $this->createForm(CityType::class, $city);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('app.repository.city')->save($city);
-            $this->addFlash('success', 'message.created_successfully');
+            $this->addFlash('success', 'message.edited_successfully');
 
             return $this->redirectToRoute('city_index');
         }
@@ -153,6 +157,7 @@ class CityController extends Controller
      * Delete action.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
+     * @param City                                      $city    City
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -163,9 +168,8 @@ class CityController extends Controller
      * )
      * @Method({"GET", "POST"})
      */
-    public function deleteAction(Request $request,City $city){
-
-
+    public function deleteAction(Request $request, City $city)
+    {
         $errors = $this->get('validator')->validateValue(
             $city,
             new Valid(),
@@ -174,6 +178,7 @@ class CityController extends Controller
 
         if ($errors->count()) {
             $this->addFlash('warning', 'message.cant_delete');
+
             return $this->redirectToRoute('city_index');
         }
 

@@ -27,9 +27,8 @@ class ScoreController extends Controller
     /**
      * Add action.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
-     *
-     * @param integer $competition_id Competition id
+     * @param \Symfony\Component\HttpFoundation\Request $request       HTTP Request
+     * @param integer                                   $competitionId Competition id
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -39,12 +38,12 @@ class ScoreController extends Controller
      * )
      * @Method({"GET", "POST"})
      */
-    public function addAction(Request $request, $competition_id)
+    public function addAction(Request $request, $competitionId)
     {
-        $competition = $this->get('app.repository.competition')->findOneById($competition_id);
+        $competition = $this->get('app.repository.competition')->findOneById($competitionId);
         if (!$competition) {
             throw $this->createNotFoundException(
-                'No competition found for id '.$competition_id
+                'No competition found for id '.$competitionId
             );
         } else {
             $score = new Score();
@@ -56,9 +55,10 @@ class ScoreController extends Controller
                 $this->get('app.repository.score')->save($score);
                 $this->addFlash('success', 'message.created_successfully');
 
-                return $this->redirectToRoute('competition_view',
+                return $this->redirectToRoute(
+                    'competition_view',
                     array(
-                        'id' => $competition_id,
+                        'id' => $competitionId,
                         )
                 );
             }
@@ -68,7 +68,7 @@ class ScoreController extends Controller
                 [
                     'score' => $score,
                     'form' => $form->createView(),
-                    'competition_id' => $competition_id,
+                    'competition_id' => $competitionId,
                 ]
             );
         }
@@ -78,6 +78,7 @@ class ScoreController extends Controller
      * Edit action.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
+     * @param Score                                     $score   Score
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -88,17 +89,20 @@ class ScoreController extends Controller
      * )
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Score $score){
+    public function editAction(Request $request, Score $score)
+    {
         $form = $this->createForm(ScoreType::class, $score);
         $form->handleRequest($request);
-        $competition_id = $score->getCompetition()->getId();
+        $competitionId = $score->getCompetition()->getId();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('app.repository.score')->save($score);
-            $this->addFlash('success', 'message.created_successfully');
-            return $this->redirectToRoute('competition_view',
+            $this->addFlash('success', 'message.edited_successfully');
+
+            return $this->redirectToRoute(
+                'competition_view',
                 array(
-                    'id' => $competition_id,
+                    'id' => $competitionId,
                 )
             );
         }
@@ -108,7 +112,7 @@ class ScoreController extends Controller
             [
                 'score' => $score,
                 'form' => $form->createView(),
-                'competition_id' => $competition_id,
+                'competition_id' => $competitionId,
             ]
         );
     }
@@ -117,6 +121,7 @@ class ScoreController extends Controller
      * Delete action.
      *
      * @param \Symfony\Component\HttpFoundation\Request $request HTTP Request
+     * @param Score                                     $score   Score
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
      *
@@ -127,18 +132,20 @@ class ScoreController extends Controller
      * )
      * @Method({"GET", "POST"})
      */
-    public function deleteAction(Request $request,Score $score){
+    public function deleteAction(Request $request, Score $score)
+    {
         $form = $this->createForm(FormType::class, $score);
         $form->handleRequest($request);
-        $competition_id = $score->getCompetition()->getId();
+        $competitionId = $score->getCompetition()->getId();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('app.repository.score')->delete($score);
             $this->addFlash('success', 'message.deleted_successfully');
 
-            return $this->redirectToRoute('competition_view',
+            return $this->redirectToRoute(
+                'competition_view',
                 array(
-                    'id' => $competition_id,
+                    'id' => $competitionId,
                 )
             );
         }
@@ -148,7 +155,7 @@ class ScoreController extends Controller
             [
                 'score' => $score,
                 'form' => $form->createView(),
-                'competition_id' => $competition_id,
+                'competition_id' => $competitionId,
             ]
         );
     }

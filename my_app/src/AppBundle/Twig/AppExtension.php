@@ -1,11 +1,22 @@
 <?php
+/**
+ * AppExtension
+ */
 
 namespace AppBundle\Twig;
 
 use AppBundle\Entity\Contestant;
 
+/**
+ * class AppExtension
+ */
 class AppExtension extends \Twig_Extension
 {
+    /**
+     * Get Filters
+     *
+     * @return array
+     */
     public function getFilters()
     {
         return array(
@@ -13,6 +24,13 @@ class AppExtension extends \Twig_Extension
         );
     }
 
+    /**
+     * Women filter
+     *
+     * @param Contestant $person Contestant
+     *
+     * @return integer
+     */
     public function womenFilter(Contestant $person)
     {
         if ($person['sex'] == "f") {
@@ -21,6 +39,5 @@ class AppExtension extends \Twig_Extension
         else {
             return '0';
         }
-
     }
 }
