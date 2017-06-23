@@ -36,6 +36,8 @@ class Competition
 
 
     /**
+     * City.
+     *
      * @ORM\ManyToOne(targetEntity="City", inversedBy="competitions")
      * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
      */
@@ -58,6 +60,8 @@ class Competition
     protected $contestants;
 
     /**
+     * Scores.
+     *
      * @ORM\OneToMany(targetEntity="Score", mappedBy="competition")
      */
     private $scores;

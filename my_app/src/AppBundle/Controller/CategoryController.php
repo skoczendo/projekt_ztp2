@@ -174,7 +174,7 @@ class CategoryController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('app.repository.category')->delete($category);
-            $this->addFlash('success', 'message.deleted_successfully');
+            $this->addFlash('success', 'message.delated_successfully');
 
             return $this->redirectToRoute('category_index');
         }

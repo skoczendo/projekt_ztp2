@@ -190,7 +190,7 @@ class SchoolController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('app.repository.school')->delete($school);
-            $this->addFlash('success', 'message.deleted_successfully');
+            $this->addFlash('success', 'message.delated_successfully');
 
             return $this->redirectToRoute('school_index');
         }

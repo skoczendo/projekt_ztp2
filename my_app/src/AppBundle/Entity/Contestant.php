@@ -35,6 +35,8 @@ class Contestant
     const NUM_ITEMS = 10;
 
     /**
+     * School
+     *
      * @ORM\ManyToOne(targetEntity="School", inversedBy="contestants")
      * @ORM\JoinColumn(name="school_id", referencedColumnName="id")
      */
@@ -53,6 +55,8 @@ class Contestant
     protected $competitions;
 
     /**
+     * Scores
+     *
      * @ORM\OneToMany(targetEntity="Score", mappedBy="contestant")
      */
     private $scores;
@@ -189,7 +193,7 @@ class Contestant
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -212,7 +216,7 @@ class Contestant
     /**
      * Get surname
      *
-     * @return string 
+     * @return string
      */
     public function getSurname()
     {
@@ -235,7 +239,7 @@ class Contestant
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -258,7 +262,7 @@ class Contestant
     /**
      * Get sex
      *
-     * @return string 
+     * @return string
      */
     public function getSex()
     {
@@ -281,7 +285,7 @@ class Contestant
     /**
      * Get epee
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getEpee()
     {
@@ -342,7 +346,7 @@ class Contestant
      */
     public function setDateOfBirth($dateOfBirth)
     {
-        $this->dateOfBirthirth = $dateOfBirth;
+        $this->dateOfBirth = $dateOfBirth;
 
         return $this;
     }

@@ -151,6 +151,11 @@
                 <target>kobiety</target>
             </trans-unit>
 
+            <trans-unit id="label.email">
+                <source>label.email</source>
+                <target>email</target>
+            </trans-unit>
+
             <trans-unit id="label.date">
                 <source>label.date</source>
                 <target>data</target>
@@ -181,6 +186,16 @@
                 <target>id</target>
             </trans-unit>
 
+            <trans-unit id="label.last.scores">
+                <source>label.last.scores</source>
+                <target>najnowsze wyniki</target>
+            </trans-unit>
+
+            <trans-unit id="label.last.login">
+                <source>label.last.login</source>
+                <target>Ostatnio zalogowany</target>
+            </trans-unit>
+
             <trans-unit id="label.login">
                 <source>label.login</source>
                 <target>zaloguj się</target>
@@ -194,6 +209,11 @@
             <trans-unit id="label.name">
                 <source>label.name</source>
                 <target>imię</target>
+            </trans-unit>
+
+            <trans-unit id="label.thing.name">
+                <source>label.thing.name</source>
+                <target>nazwa</target>
             </trans-unit>
 
             <trans-unit id="label.no">
@@ -246,6 +266,11 @@
                 <target>nazwisko</target>
             </trans-unit>
 
+            <trans-unit id="label.username">
+                <source>label.username</source>
+                <target>login</target>
+            </trans-unit>
+
             <trans-unit id="label.yes">
                 <source>label.yes</source>
                 <target>tak</target>
@@ -262,9 +287,24 @@
             </trans-unit>
 
 
-            <trans-unit id="message.created_successfully ">
-                <source>message.created_successfully </source>
+            <trans-unit id="message.cant_delete">
+                <source>message.cant_delete</source>
+                <target>Nie mozna usunac tego rekordu, bo jest powiazany z innymi danymi!</target>
+            </trans-unit>
+
+            <trans-unit id="message.created_successfully">
+                <source>message.created_successfully</source>
                 <target>Rekord został utworzony pomyślnie!</target>
+            </trans-unit>
+
+            <trans-unit id="message.delated_successfully">
+                <source>message.delated_successfully</source>
+                <target>Rekord został usuniety pomyślnie!</target>
+            </trans-unit>
+
+            <trans-unit id="message.edited_successfully">
+                <source>message.edited_successfully</source>
+                <target>Dane zostay zmienione!</target>
             </trans-unit>
 
             <trans-unit id="message.empty_list">
@@ -272,7 +312,17 @@
                 <target>Lista rekordów jest pusta!</target>
             </trans-unit>
 
+            <trans-unit id="message.form_error">
+                <source>message.form_error</source>
+                <target>Błąd formularza</target>
+            </trans-unit>
 
+
+
+            <trans-unit id="title.admins">
+                <source>title.admins</source>
+                <target>Administratorzy</target>
+            </trans-unit>
 
             <trans-unit id="title.categories">
                 <source>title.categories</source>
@@ -404,6 +454,11 @@
                 <target>Szkoła</target>
             </trans-unit>
 
+            <trans-unit id="title.school.add">
+                <source>title.school.add</source>
+                <target>Dodaj szkołę</target>
+            </trans-unit>
+
             <trans-unit id="title.school.delete">
                 <source>title.school.delete</source>
                 <target>Usuń szkołę</target>
@@ -434,6 +489,10 @@
                 <target>Usuń wynik</target>
             </trans-unit>
 
+            <trans-unit id="title.users">
+                <source>title.users</source>
+                <target>administratorzy</target>
+            </trans-unit>
 
 
             <trans-unit id="question.competition">

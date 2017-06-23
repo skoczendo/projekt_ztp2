@@ -68,8 +68,7 @@ class UserController extends Controller
                 'No user found for username '.$username
             );
         } else {
-            if (count($users) > 1)
-            {
+            if (count($users) > 1) {
                 $form = $this->createForm(FormType::class, $user);
                 $form->handleRequest($request);
 

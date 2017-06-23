@@ -15,6 +15,12 @@ use FOS\UserBundle\Model\UserInterface;
  */
 class RegistrationFormHandler extends BaseHandler
 {
+    /**
+     * BuildForm
+     *
+     * @param UserInterface $user
+     * @param string        $confirmation
+     */
     protected function onSuccess(UserInterface $user, $confirmation)
     {
         $user->setRoles(['ROLE_USER']);

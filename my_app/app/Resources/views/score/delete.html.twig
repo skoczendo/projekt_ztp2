@@ -50,13 +50,13 @@
     method: 'post',
     action: url('score_delete', {'id': score.id})
     },
-    submit_label: 'delete'
+    submit_label: 'usuń'
     } %}
 
     <br>
     <br>
     <div class="btn-group">
-        <a href="{{ path('competition_view', {'id': competition_id}) }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
+        <a href="{{ path('competition_view', {'id': competitionId}) }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
             {{ 'action.index'|trans }}
         </a>
     </div>

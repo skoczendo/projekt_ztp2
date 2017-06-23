@@ -14,6 +14,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
+     * Index
+     *
      * @Route("/default")
      *
      * @return \Symfony\Component\HttpFoundation\Response HTTP Response

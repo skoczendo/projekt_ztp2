@@ -24,7 +24,10 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class ContestantType extends AbstractType
 {
     /**
-     * {@inheritdoc}
+     * BuildForm
+     *
+     * @param FormBuilderInterface $builder
+     * @param FormBuilderInterface $options array
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -77,10 +80,10 @@ class ContestantType extends AbstractType
             ]
         )
         ->add(
-            'date_of_birth',
+            'dateOfBirth',
             BirthdayType::class,
             [
-                'label' => 'label.date_of_birth',
+                'label' => 'label.dateOfBirth',
                 'required' => true,
             ]
         )
@@ -112,7 +115,9 @@ class ContestantType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * Options
+     *
+     * @param OptionsResolver $resolver
      */
     public function configureOptions(OptionsResolver $resolver)
     {
@@ -125,7 +130,9 @@ class ContestantType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * Get Prefix
+     *
+     * @return 'contestant_type'
      */
     public function getBlockPrefix()
     {

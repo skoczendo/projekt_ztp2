@@ -187,7 +187,7 @@ class CityController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('app.repository.city')->delete($city);
-            $this->addFlash('success', 'message.deleted_successfully');
+            $this->addFlash('success', 'message.delated_successfully');
 
             return $this->redirectToRoute('city_index');
         }

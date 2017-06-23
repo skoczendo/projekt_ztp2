@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Baza zawodów.
+ *
+ * @author Dominika Skoczeń <doskoczen@gmail.com>
+ */
 namespace AppBundle\Repository;
 
 use AppBundle\Entity\City;

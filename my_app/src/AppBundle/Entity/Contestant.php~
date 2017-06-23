@@ -342,7 +342,7 @@ class Contestant
      */
     public function setDateOfBirth($dateOfBirth)
     {
-        $this->date_of_birth = $dateOfBirth;
+        $this->dateOfBirthirth = $dateOfBirth;
 
         return $this;
     }
@@ -354,7 +354,7 @@ class Contestant
      */
     public function getDateOfBirth()
     {
-        return $this->date_of_birth;
+        return $this->dateOfBirth;
     }
 
     /**

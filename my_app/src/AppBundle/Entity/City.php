@@ -42,6 +42,8 @@ class City
     const NUM_ITEMS = 10;
 
     /**
+     * Competitons
+     *
      * @ORM\OneToMany(targetEntity="Competition", mappedBy="city")
      */
     private $competitions;
@@ -92,7 +94,7 @@ class City
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -115,7 +117,7 @@ class City
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -155,7 +157,7 @@ class City
     /**
      * Get competitions
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getCompetitions()
     {

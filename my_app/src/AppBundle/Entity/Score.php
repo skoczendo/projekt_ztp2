@@ -1,6 +1,8 @@
 <?php
 /**
  * Score entity.
+ *
+ * @author Dominika Skoczeń <doskoczen@gmail.com>
  */
 namespace AppBundle\Entity;
 
@@ -31,18 +33,24 @@ class Score
     const NUM_ITEMS = 10;
 
     /**
+     * Category
+     *
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="scores")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $category;
 
     /**
+     * Competitons
+     *
      * @ORM\ManyToOne(targetEntity="Competition", inversedBy="scores")
      * @ORM\JoinColumn(name="competition_id", referencedColumnName="id")
      */
     private $competition;
 
     /**
+     * Contestant
+     *
      * @ORM\ManyToOne(targetEntity="Contestant", inversedBy="scores")
      * @ORM\JoinColumn(name="contestant_id", referencedColumnName="id")
      */
@@ -112,7 +120,7 @@ class Score
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -135,7 +143,7 @@ class Score
     /**
      * Get place
      *
-     * @return integer 
+     * @return integer
      */
     public function getPlace()
     {
@@ -158,7 +166,7 @@ class Score
     /**
      * Get points
      *
-     * @return integer 
+     * @return integer
      */
     public function getPoints()
     {
@@ -181,7 +189,7 @@ class Score
     /**
      * Get category
      *
-     * @return \AppBundle\Entity\Category 
+     * @return \AppBundle\Entity\Category
      */
     public function getCategory()
     {
@@ -204,7 +212,7 @@ class Score
     /**
      * Get competition
      *
-     * @return \AppBundle\Entity\Competition 
+     * @return \AppBundle\Entity\Competition
      */
     public function getCompetition()
     {
@@ -227,7 +235,7 @@ class Score
     /**
      * Get contestant
      *
-     * @return \AppBundle\Entity\Contestant 
+     * @return \AppBundle\Entity\Contestant
      */
     public function getContestant()
     {

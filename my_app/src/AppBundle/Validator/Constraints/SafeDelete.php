@@ -14,8 +14,14 @@ use Symfony\Component\Validator\Constraint;
  */
 class SafeDelete extends Constraint
 {
+    /**
+     * Message
+     */
     public $message = 'Nie mozesz usunac rekordu bo jest powiazany z innymi danymi.';
 
+    /**
+     * Field
+     */
     public $field;
 
     /**

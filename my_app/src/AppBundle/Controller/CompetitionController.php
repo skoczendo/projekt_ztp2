@@ -190,7 +190,7 @@ class CompetitionController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('app.repository.competition')->delete($competition);
-            $this->addFlash('success', 'message.deleted_successfully');
+            $this->addFlash('success', 'message.delated_successfully');
 
             return $this->redirectToRoute('competition_index');
         }

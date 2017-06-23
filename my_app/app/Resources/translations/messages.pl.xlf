@@ -161,9 +161,14 @@
                 <target>data</target>
             </trans-unit>
 
+            <trans-unit id="label.dateOfBirth">
+                <source>label.dateOfBirth</source>
+                <target>Data urodzenia</target>
+            </trans-unit>
+
             <trans-unit id="label.date_of_birth">
                 <source>label.date_of_birth</source>
-                <target>data urodzenia</target>
+                <target>Data urodzenia</target>
             </trans-unit>
 
             <trans-unit id="label.epee">
@@ -310,6 +315,11 @@
             <trans-unit id="message.empty_list">
                 <source>message.empty_list</source>
                 <target>Lista rekordów jest pusta!</target>
+            </trans-unit>
+
+            <trans-unit id="message.form_error">
+                <source>message.form_error</source>
+                <target>Błąd formularza</target>
             </trans-unit>
 
 

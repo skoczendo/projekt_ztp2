@@ -21,7 +21,10 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class CompetitionType extends AbstractType
 {
     /**
-     * {@inheritdoc}
+     * BuildForm
+     *
+     * @param FormBuilderInterface $builder
+     * @param FormBuilderInterface $options array
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -50,7 +53,9 @@ class CompetitionType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * Options
+     *
+     * @param OptionsResolver $resolver
      */
     public function configureOptions(OptionsResolver $resolver)
     {
@@ -63,7 +68,9 @@ class CompetitionType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * Get Prefix
+     *
+     * @return 'contestant_type'
      */
     public function getBlockPrefix()
     {

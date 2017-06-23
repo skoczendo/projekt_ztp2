@@ -208,7 +208,7 @@
 
     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
         <div class="btn-group">
-            <a href="{{ path('score_add', {'competition_id': id }) }}" class="btn btn-primary" title="{{ 'action.add.score'|trans }}">
+            <a href="{{ path('score_add', {'competitionId': id }) }}" class="btn btn-primary" title="{{ 'action.add.score'|trans }}">
                 {{ 'action.add.score'|trans }}
             </a>
         </div>

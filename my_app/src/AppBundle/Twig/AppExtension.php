@@ -35,8 +35,7 @@ class AppExtension extends \Twig_Extension
     {
         if ($person['sex'] == "f") {
             return '1';
-        }
-        else {
+        } else {
             return '0';
         }
     }

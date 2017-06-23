@@ -1,5 +1,7 @@
 <?php
-// src/AppBundle/AppBundle.php
+/**
+ *  App bundle
+ */
 namespace AppBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;

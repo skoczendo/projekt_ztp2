@@ -13,12 +13,12 @@
     {% include 'default/_form.html.twig' with {
     attr: {
     method: 'post',
-    action: url('score_add', {'competition_id': competition_id})
+    action: url('score_add', {'competitionId': competitionId})
     },
     } %}
 
     <div class="btn-group">
-        <a href="{{ path('competition_view', {'id': competition_id}) }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
+        <a href="{{ path('competition_view', {'id': competitionId}) }}" class="btn btn-default" title="{{ 'action.index'|trans }}">
             {{ 'action.index'|trans }}
         </a>
     </div>

@@ -1,5 +1,7 @@
 <?php
-// src/UserBundle/UserBundle.php
+/**
+ * User bundle
+ */
 namespace UserBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;

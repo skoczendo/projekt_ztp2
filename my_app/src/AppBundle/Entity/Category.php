@@ -35,6 +35,8 @@ class Category
     const NUM_ITEMS = 10;
 
     /**
+     * Scores
+     *
      * @ORM\OneToMany(targetEntity="Score", mappedBy="category")
      */
     private $scores;
@@ -94,7 +96,7 @@ class Category
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -117,7 +119,7 @@ class Category
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -150,7 +152,7 @@ class Category
     /**
      * Get score
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getScore()
     {
@@ -160,7 +162,7 @@ class Category
     /**
      * Get scores
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getScores()
     {

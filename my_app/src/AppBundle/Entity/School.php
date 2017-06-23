@@ -42,6 +42,8 @@ class School
     const NUM_ITEMS = 10;
 
     /**
+     * Contestants
+     *
      * @ORM\OneToMany(targetEntity="Contestant", mappedBy="school")
      */
     private $contestants;
@@ -149,7 +151,7 @@ class School
     /**
      * Get contestants
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getContestants()
     {
@@ -189,7 +191,7 @@ class School
     /**
      * Get products
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getProducts()
     {

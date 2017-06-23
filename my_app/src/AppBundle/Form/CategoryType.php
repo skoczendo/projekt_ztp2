@@ -18,7 +18,10 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class CategoryType extends AbstractType
 {
     /**
-     * {@inheritdoc}
+     * BuildForm
+     *
+     * @param FormBuilderInterface $builder
+     * @param FormBuilderInterface $options array
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -36,7 +39,9 @@ class CategoryType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * Options
+     *
+     * @param OptionsResolver $resolver
      */
     public function configureOptions(OptionsResolver $resolver)
     {
@@ -49,7 +54,9 @@ class CategoryType extends AbstractType
     }
 
     /**
-     * {@inheritdoc}
+     * Get Prefix
+     *
+     * @return 'contestant_type'
      */
     public function getBlockPrefix()
     {

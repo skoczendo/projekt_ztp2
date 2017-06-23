@@ -295,7 +295,7 @@ class ContestantController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('app.repository.contestant')->delete($contestant);
-            $this->addFlash('success', 'message.deleted_successfully');
+            $this->addFlash('success', 'message.delated_successfully');
 
             return $this->redirectToRoute('contestant_index');
         }

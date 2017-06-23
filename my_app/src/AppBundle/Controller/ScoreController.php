@@ -33,7 +33,7 @@ class ScoreController extends Controller
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response HTTP Response
      *
      * @Route(
-     *     "/add/{competition_id}",
+     *     "/add/{competitionId}",
      *     name="score_add",
      * )
      * @Method({"GET", "POST"})
@@ -68,7 +68,7 @@ class ScoreController extends Controller
                 [
                     'score' => $score,
                     'form' => $form->createView(),
-                    'competition_id' => $competitionId,
+                    'competitionId' => $competitionId,
                 ]
             );
         }
@@ -112,7 +112,7 @@ class ScoreController extends Controller
             [
                 'score' => $score,
                 'form' => $form->createView(),
-                'competition_id' => $competitionId,
+                'competitionId' => $competitionId,
             ]
         );
     }
@@ -140,7 +140,7 @@ class ScoreController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->get('app.repository.score')->delete($score);
-            $this->addFlash('success', 'message.deleted_successfully');
+            $this->addFlash('success', 'message.delated_successfully');
 
             return $this->redirectToRoute(
                 'competition_view',
@@ -155,7 +155,7 @@ class ScoreController extends Controller
             [
                 'score' => $score,
                 'form' => $form->createView(),
-                'competition_id' => $competitionId,
+                'competitionId' => $competitionId,
             ]
         );
     }
